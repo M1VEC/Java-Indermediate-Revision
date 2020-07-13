@@ -1,5 +1,6 @@
 package com.pbilton.Object.oriented.Programming.Revision;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -35,6 +36,54 @@ public class Main {
 
     private static void comparing_objects() {
         System.out.println("Comparing Objects");
+        System.out.println("    If we create a new class and then two instances of that class adn then try");
+        System.out.println("    to compare the two values, it will always return false. This is because it is comparing");
+        System.out.println("    the memory location of the two values.");
+        System.out.println();
+
+        System.out.println("    We need to override the base class of the equals method. In the example below we have the main class:");
+        System.out.println("public static void main(String[] args) {");
+        System.out.println();
+        System.out.println("    var point1 = new Point(1,2);");
+        System.out.println("    var point2 = new Point(1,2);");
+        System.out.println("    System.out.println(point1.equals(point2));");
+        System.out.println("}");
+        System.out.println();
+
+        System.out.println("    In the objects class called Point we have:");
+        System.out.println();
+        System.out.println("public class Point {");
+        System.out.println("    private int x;");
+        System.out.println("    private int y;");
+        System.out.println();
+        System.out.println("public Point(int x, int y) {");
+        System.out.println("    this.x = x;");
+        System.out.println("    this.y = y;");
+        System.out.println("}");
+        System.out.println();
+        System.out.println("@Override");
+        System.out.println("public boolean equals(Object obj) {");
+        System.out.println("    if (!(obj instanceof Point))");
+        System.out.println("    return false;");
+        System.out.println("        var other = (Point)obj;");
+        System.out.println("        return other.x == x && other.y == y;");
+        System.out.println("}");
+        System.out.println();
+
+        System.out.println("    When we override the equals method we can literally pass any object through.");
+        System.out.println("    This will throw an exception. To combat this we use a if statement to check that it's");
+        System.out.println("    an instance of Point.");
+
+        System.out.println("    When we override the equals method, we should also override the hashcode method.");
+        System.out.println("    This will then compare the hash of the contents rather than the address of the object in memory.");
+        System.out.println();
+
+        System.out.println("@Override");
+        System.out.println("public int hashCode() {");
+        System.out.println("return Objects.hash(x,y);");
+        System.out.println("}");
+        System.out.println();
+        System.out.println("Intellij has a shortcut for doing the above. In windows the shortcut is accessed using alt + ins. Then select equals and hash.");
     }
 
     private static void upcasting_and_downcasting() {
