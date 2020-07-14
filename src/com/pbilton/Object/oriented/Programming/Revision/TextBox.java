@@ -1,13 +1,32 @@
 package com.pbilton.Object.oriented.Programming.Revision;
 
-public class TextBox {
-    public String text =""; // Field
-    public void setText(String name){
-        this.text = name;
-        //'this' dot operator is useful when the name of a parameter is the same name as the field
-        //It inherits methods from other classes previously created
+    public class TextBox extends UIControl{
+//        private String text ="";
+//
+////    public TextBox(){
+////        super(true);
+////    }
+//
+//        @Override
+//        public void render() {
+//            System.out.println("Render TextBox");
+//        }
+//
+//        @Override
+//        public String toString() {
+//            return text;
+//        }
+//
+//        public void setText(String text){
+//            this.text = "hello";
+//        }
+//
+//        public void clear(String text){
+//            this.text = "";
+//        }
+
     }
-    public void clear(){
-        this.text ="";
-    }
-}
+
+
+
+

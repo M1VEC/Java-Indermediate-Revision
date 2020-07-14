@@ -30,15 +30,34 @@ public class Main {
             else if (selectedSection == 17) overriding_methods();
             else if (selectedSection == 18)upcasting_and_downcasting();
             else if (selectedSection ==19)comparing_objects();
+            else if (selectedSection == 20)polymorphism();
             runAgain=re_run();
         }
     }
 
+    private static void polymorphism() {
+        System.out.println("Polymorphism");
+        System.out.println("    Polymorphism means Many forms, it allows an object to take different forms.");
+        System.out.println();
+        System.out.println("public static void main(String[] args) {");
+        System.out.println("    UIControl[] controls = {new TextBox(), new CheckBox()};");
+        System.out.println("    for (var control : controls) {");
+        System.out.println("    control.render();");
+
+        System.out.println("    In each class we Override the render method that is present in the UIControl. Then in our enhanced for loop above, ");
+        System.out.println("    we override the render method in the TextBox object and CheckBox object.");
+
+//        UIControl[] controls = {new TextBox(), new CheckBox()};
+//        for (var control : controls) {
+//            control.render();
+//        }
+    }
+
     private static void comparing_objects() {
         System.out.println("Comparing Objects");
-        System.out.println("    If we create a new class and then two instances of that class adn then try");
+        System.out.println("    If we create a new class and then two instances of that class and then try");
         System.out.println("    to compare the two values, it will always return false. This is because it is comparing");
-        System.out.println("    the memory location of the two values.");
+        System.out.println("    the memory location of two values.");
         System.out.println();
 
         System.out.println("    We need to override the base class of the equals method. In the example below we have the main class:");
@@ -83,7 +102,7 @@ public class Main {
         System.out.println("return Objects.hash(x,y);");
         System.out.println("}");
         System.out.println();
-        System.out.println("Intellij has a shortcut for doing the above. In windows the shortcut is accessed using alt + ins. Then select equals and hash.");
+        System.out.println("    Intellij has a shortcut for doing the above. In windows the shortcut is accessed using alt + ins. Then select equals and hash.");
     }
 
     private static void upcasting_and_downcasting() {
@@ -225,11 +244,11 @@ public class Main {
         System.out.println(" }");
         System.out.println();
 
-        new Employee(50_000);
-        var employee = new Employee(50_000, 20);
-        Employee.printNumberOfEmployees();
-        int wage = employee.calculateWage(10);
-        System.out.println(wage);
+//        new Employee(50_000);
+//        var employee = new Employee(50_000, 20);
+//        Employee.printNumberOfEmployees();
+//        int wage = employee.calculateWage(10);
+//        System.out.println(wage);
     }
 
     private static void method_overloading() {
@@ -520,11 +539,11 @@ public class Main {
         System.out.println();
 
         //Example code
-        var textBox1 = new TextBox();
-        textBox1.setText("Box 1");
-        var textBox2 = new TextBox();
-        textBox2.setText("Box 2");
-        System.out.println(textBox2.text);
+//        var textBox1 = new TextBox();
+//        textBox1.setText("Box 1");
+//        var textBox2 = new TextBox();
+//        textBox2.setText("Box 2");
+//        System.out.println(textBox2.text);
     }
 
     public static void creatingClasses(){
