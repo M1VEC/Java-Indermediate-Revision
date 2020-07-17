@@ -31,8 +31,41 @@ public class Main {
             else if (selectedSection == 18)upcasting_and_downcasting();
             else if (selectedSection ==19)comparing_objects();
             else if (selectedSection == 20)polymorphism();
+            else if (selectedSection == 21)abstract_classes_methods();
+            else if (selectedSection == 22)final_classes_methods();
+            else if (selectedSection == 23)deep_inheritance_hierarchies();
             runAgain=re_run();
         }
+    }
+
+    private static void deep_inheritance_hierarchies() {
+
+    }
+
+    private static void final_classes_methods() {
+        System.out.println("Final Classes and Methods");
+        System.out.println("    When we declare a class as final we cannot extend it anymore.");
+        System.out.println("    We use final classes when we are 100% sure of its implementation and we want to prevent other");
+        System.out.println("    classes from extending that class. We shouldn't really use final classes as it ");
+        System.out.println("    prevents us from using inheritance and polymorphism.");
+        System.out.println();
+        System.out.println("    We can also declare methods as final. When doing so, we cannot override it.");
+        System.out.println("    We use final when we have made certain assumptions and we don't ");
+        System.out.println("    want subclasses to accidentally change the behaviour of or break our assumptions.");
+
+    }
+
+    private static void abstract_classes_methods() {
+        System.out.println("Abstract Classes and Methods");
+        System.out.println("    We use Abstract when we declare a class but we don't want to be able to create a new instance of the class");
+        System.out.println("public abstract class UIControl {");
+        System.out.println("   private boolean isEnabled = true;");
+        System.out.println("}");
+        System.out.println();
+        System.out.println("    We can also make methods in the abstract class abstract themselves. This will force any classes that");
+        System.out.println("    derive from the UIControl to implement this method");
+        System.out.println("public abstract void render();");
+        System.out.println();
     }
 
     private static void polymorphism() {
@@ -189,6 +222,7 @@ public class Main {
         System.out.println("public TextBox() {");
         System.out.println(" super(true);");
         System.out.println();
+        System.out.println("    Try to keep inheritance to minimum levels as possible.");
     }
 
     private static void refactoring() {
