@@ -35,8 +35,29 @@ public class Main {
             else if (selectedSection == 22)final_classes_methods();
             else if (selectedSection == 23)deep_inheritance_hierarchies();
             else if (selectedSection == 24)multiple_inheritance();
+            else if (selectedSection == 25)interfaces();
             runAgain=re_run();
         }
+    }
+
+    private static void interfaces() {
+        System.out.println("Interfaces");
+        System.out.println("    A lot of misinformation is around. The meaning of interfaces have changed since java 8");
+        System.out.println("    We use interfaces in Java to build loosely coupled, extensible and testable applications. ");
+        System.out.println("        A------->B");
+        System.out.println("            A is coupled to B");
+        System.out.println("    When classes are coupled together and we make changes,");
+        System.out.println("    potentially hundreds of lines of code need to be changed and recompiled.");
+        System.out.println();
+        System.out.println("    Using Abstraction, we want to hide the implementation details and only expose what is necessary.");
+        System.out.println("    Using private access modifier, Class A will know less about Class B");
+        System.out.println("        A - - - B");
+        System.out.println("    But this is still not enough. This is where Interfaces comes in.");
+        System.out.println();
+        System.out.println("    With an interface Class A knows nothing baout Class B, like it doesn't even exist.");
+        System.out.println("    If we change B, then Class A will not be effected. ");
+
+
     }
 
     private static void multiple_inheritance() {
