@@ -34,12 +34,22 @@ public class Main {
             else if (selectedSection == 21)abstract_classes_methods();
             else if (selectedSection == 22)final_classes_methods();
             else if (selectedSection == 23)deep_inheritance_hierarchies();
+            else if (selectedSection == 24)multiple_inheritance();
             runAgain=re_run();
         }
     }
 
-    private static void deep_inheritance_hierarchies() {
+    private static void multiple_inheritance() {
+        System.out.println("    Java does not support multiple inheritance as it brings to many complex problems.");
+    }
 
+    private static void deep_inheritance_hierarchies() {
+        System.out.println("Deep inheritance Hierarchies");
+        System.out.println("    Do not create deep inheritance hierarchy.");
+        System.out.println("    Using deep inheritance hierarchy creates a pyramid structure, and when we change something in the");
+        System.out.println("    base class like the constructor or any of its methods, chances are that we will have to modify ");
+        System.out.println("    all the child classes connected to it.");
+        System.out.println("    Up to 1 or two levels is deemed ok, but no more than 3 levels deep.");
     }
 
     private static void final_classes_methods() {
@@ -781,7 +791,8 @@ public class Main {
         System.out.println("0- Tips, 1- Introduction, 2- Understanding Class, 3-Creating Classes, 4- Creating Objects");
         System.out.println("5- Memory Allocation, 6- Procedural Programming, 7- Encapsulation, 8- Setters and Getters");
         System.out.println("9- Abstraction, 10- Coupling, 11- Constructors, 12- Method Overloading, 13- Constructor Overloading");
-        System.out.println("14- Refactoring, 15- Inheritance, 16- Access Modifiers, 17-Overriding Methods ");
+        System.out.println("14- Refactoring, 15- Inheritance, 16- Access Modifiers, 17-Overriding Methods, 18- Upcasting and Downcasting,");
+        System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
