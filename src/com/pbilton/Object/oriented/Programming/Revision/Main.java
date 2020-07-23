@@ -36,8 +36,42 @@ public class Main {
             else if (selectedSection == 23)deep_inheritance_hierarchies();
             else if (selectedSection == 24)multiple_inheritance();
             else if (selectedSection == 25)interfaces();
+            else if (selectedSection == 26)tightly_coupled_code();
             runAgain=re_run();
         }
+    }
+
+    private static void tightly_coupled_code() {
+        System.out.println("Tightly-coupled Code");
+        System.out.println("    The following is an example of a tightly coupled tax report program.");
+        System.out.println("    If we were to code this, and then modify the constructors for example an add an extra parameter,");
+        System.out.println("    then we have to modify the Tax report constructor. This isn't to bad for a small program, but ");
+        System.out.println("    if we are creating a large program with 10 classes linked to the Tax Calculator we will have change them all.");
+        System.out.println();
+
+        System.out.println("public class TaxCalculator {");
+        System.out.println("   private double taxableIncome;");
+        System.out.println("    public TaxCalculator(double taxableIncome) {\n");
+        System.out.println("            this.taxableIncome = taxableIncome;\n");
+        System.out.println("        }\n");
+        System.out.println("        public double calculateTax(){\n");
+        System.out.println("            return taxableIncome * 0.3;\n");
+        System.out.println("        }\n");
+        System.out.println("    }\n");
+        System.out.println();
+
+        System.out.println("  //Then if we have the report class:");
+        System.out.println("   public class TaxReport {\n");
+        System.out.println("    private TaxCalculator calculator;\n");
+        System.out.println("       public TaxReport(){\n");
+        System.out.println("         calculator = new TaxCalculator(100_000);\n");
+        System.out.println("       }\n");
+        System.out.println();
+        System.out.println("       public void show(){\n");
+        System.out.println("         var tax = calculator.calculateTax();\n");
+        System.out.println("         System.out.println(tax);\n");
+        System.out.println("       }\n");
+        System.out.println("   }");
     }
 
     private static void interfaces() {
