@@ -37,8 +37,35 @@ public class Main {
             else if (selectedSection == 24)multiple_inheritance();
             else if (selectedSection == 25)interfaces();
             else if (selectedSection == 26)tightly_coupled_code();
+            else if (selectedSection == 27)creating_interfaces();
             runAgain=re_run();
         }
+    }
+
+    private static void creating_interfaces() {
+        System.out.println("Creating an Interface");
+        System.out.println("    To create a new interface in Intellij, go to the projects tab and select new class,");
+        System.out.println("    then we can change the type to interface.");
+        System.out.println();
+
+        System.out.println("    In C sharpe, user's prefix the name of interfaces with I. e.g ICalculateTax");
+        System.out.println("    In java, one way to prefix an interface is to use Can e.g CanCalculateTax");
+        System.out.println("    and another way is able e.g Draggable or Resizable.");
+        System.out.println();
+
+        System.out.println("    In the interface we don't have any states or fields, we only have method declarations ");
+        System.out.println("    that determine what needs to be done.");
+        System.out.println("    As the interface only contains methods that must be implemented by a class, there is no ");
+        System.out.println("    need for the public key word when declaring methods.");
+        System.out.println("    We can not instantiate a interface like a class e.g var c = new TaxInterface();");
+        System.out.println("    Instead we use the implements key word when declaring our class");
+        System.out.println(" public class TaxCalculator2018 implements TaxCalculator {");
+        System.out.println();
+
+        System.out.println("    As best practice we should also apply the @Override annotation for interface methods.");
+        System.out.println("    The benefit of using this annotation is if at some point we remove the method call from the interface,");
+        System.out.println("    the @Override will highlight a complication error as it tells the compiler ");
+        System.out.println("    that we are implementing a interface method but this method does not exist.");
     }
 
     private static void tightly_coupled_code() {
@@ -74,7 +101,6 @@ public class Main {
         System.out.println("       }");
         System.out.println("   }");
         System.out.println();
-
         System.out.println("    You can see that the report class is tightly coupled, we can solve this by Programming with Interfaces");
     }
 
@@ -861,6 +887,8 @@ public class Main {
         System.out.println("9- Abstraction, 10- Coupling, 11- Constructors, 12- Method Overloading, 13- Constructor Overloading");
         System.out.println("14- Refactoring, 15- Inheritance, 16- Access Modifiers, 17-Overriding Methods, 18- Upcasting and Downcasting,");
         System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
+        System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
+        System.out.println("27 - Creating interfaces");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
