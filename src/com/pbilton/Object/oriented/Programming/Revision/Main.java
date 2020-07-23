@@ -38,8 +38,20 @@ public class Main {
             else if (selectedSection == 25)interfaces();
             else if (selectedSection == 26)tightly_coupled_code();
             else if (selectedSection == 27)creating_interfaces();
+            else if (selectedSection == 28)dependency_injection();
             runAgain=re_run();
         }
+    }
+
+    private static void dependency_injection() {
+        System.out.println("Dependency Injection");
+        System.out.println("    Our classes should not instantiate their dependencies.");
+        System.out.println("    In our example, the TaxReport class should not create the TaxCalculator2018 object, it should only use it.");
+        System.out.println("    Creating the object and using the object is two different things, these should be separated. ");
+        System.out.println("    This is called the separation of concerns, we do this using Dependency Injection");
+        System.out.println("    Dependency Injection can be achieved using: Constructor Injection");
+        System.out.println("                                                Setter Injection");
+        System.out.println("                                                Method Injection");
     }
 
     private static void creating_interfaces() {
@@ -57,8 +69,10 @@ public class Main {
         System.out.println("    that determine what needs to be done.");
         System.out.println("    As the interface only contains methods that must be implemented by a class, there is no ");
         System.out.println("    need for the public key word when declaring methods.");
+        System.out.println();
         System.out.println("    We can not instantiate a interface like a class e.g var c = new TaxInterface();");
         System.out.println("    Instead we use the implements key word when declaring our class");
+        System.out.println();
         System.out.println(" public class TaxCalculator2018 implements TaxCalculator {");
         System.out.println();
 
@@ -888,7 +902,7 @@ public class Main {
         System.out.println("14- Refactoring, 15- Inheritance, 16- Access Modifiers, 17-Overriding Methods, 18- Upcasting and Downcasting,");
         System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
         System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
-        System.out.println("27 - Creating interfaces");
+        System.out.println("27 - Creating interfaces, 28 - Dependency Injection");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
