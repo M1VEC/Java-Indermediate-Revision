@@ -51,27 +51,31 @@ public class Main {
 
         System.out.println("public class TaxCalculator {");
         System.out.println("   private double taxableIncome;");
-        System.out.println("    public TaxCalculator(double taxableIncome) {\n");
-        System.out.println("            this.taxableIncome = taxableIncome;\n");
-        System.out.println("        }\n");
-        System.out.println("        public double calculateTax(){\n");
-        System.out.println("            return taxableIncome * 0.3;\n");
-        System.out.println("        }\n");
-        System.out.println("    }\n");
+        System.out.println("    public TaxCalculator(double taxableIncome) {");
+        System.out.println("            this.taxableIncome = taxableIncome;");
+        System.out.println("        }");
+        System.out.println("        public double calculateTax(){");
+        System.out.println("            return taxableIncome * 0.3;");
+        System.out.println("        }");
+        System.out.println("    }");
         System.out.println();
 
-        System.out.println("  //Then if we have the report class:");
-        System.out.println("   public class TaxReport {\n");
-        System.out.println("    private TaxCalculator calculator;\n");
-        System.out.println("       public TaxReport(){\n");
-        System.out.println("         calculator = new TaxCalculator(100_000);\n");
-        System.out.println("       }\n");
+        System.out.println("    Then we have the report class:");
         System.out.println();
-        System.out.println("       public void show(){\n");
-        System.out.println("         var tax = calculator.calculateTax();\n");
-        System.out.println("         System.out.println(tax);\n");
-        System.out.println("       }\n");
+        System.out.println("   public class TaxReport {");
+        System.out.println("    private TaxCalculator calculator;");
+        System.out.println("       public TaxReport(){");
+        System.out.println("         calculator = new TaxCalculator(100_000);");
+        System.out.println("       }");
+        System.out.println();
+        System.out.println("       public void show(){");
+        System.out.println("         var tax = calculator.calculateTax();");
+        System.out.println("         System.out.println(tax);");
+        System.out.println("       }");
         System.out.println("   }");
+        System.out.println();
+
+        System.out.println("    You can see that the report class is tightly coupled, we can solve this by Programming with Interfaces");
     }
 
     private static void interfaces() {
