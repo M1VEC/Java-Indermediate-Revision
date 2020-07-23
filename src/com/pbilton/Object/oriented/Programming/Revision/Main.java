@@ -295,7 +295,6 @@ public class Main {
         System.out.println("    passed here at runtime is an instance of the text box class. ");
     }
 
-
     private static void overriding_methods() {
         System.out.println("Overriding Methods");
         System.out.println("    We inherit a method from the base class but we want to change it");
