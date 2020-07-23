@@ -50,13 +50,22 @@ public class Main {
         System.out.println("    potentially hundreds of lines of code need to be changed and recompiled.");
         System.out.println();
         System.out.println("    Using Abstraction, we want to hide the implementation details and only expose what is necessary.");
-        System.out.println("    Using private access modifier, Class A will know less about Class B");
+        System.out.println("    Using private key word, Class A will know less about Class B");
         System.out.println("        A - - - B");
         System.out.println("    But this is still not enough. This is where Interfaces comes in.");
         System.out.println();
-        System.out.println("    With an interface Class A knows nothing baout Class B, like it doesn't even exist.");
+        System.out.println("    With an interface Class A knows nothing about Class B, like it doesn't even exist.");
         System.out.println("    If we change B, then Class A will not be effected. ");
-
+        System.out.println();
+        System.out.println("    An interface is a type similar to a class, but it only includes method declarations, no implementations or code.");
+        System.out.println("    It only defines the capabilities that a class should have.");
+        System.out.println("            \t\tA----->Interface<-----B");
+        System.out.println("    Now if we change the code in B, then A is not affected because it knows nothing about B. This is what");
+        System.out.println("    we call *Programming against interfaces. ");
+        System.out.println("    We code our programmes to work with interfaces, not concrete implementations which results in ");
+        System.out.println("    applications that are loosely coupled and extensive. ");
+        System.out.println("                Interfaces                 Classes");
+        System.out.println("            What should be done      How it should be done");
 
     }
 
