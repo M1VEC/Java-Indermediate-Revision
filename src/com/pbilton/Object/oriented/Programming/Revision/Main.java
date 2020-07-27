@@ -40,8 +40,38 @@ public class Main {
             else if (selectedSection == 27)creating_interfaces();
             else if (selectedSection == 28)dependency_injection();
             else if (selectedSection == 29)constructor_injection();
+            else if (selectedSection == 30)setter_injection();
             runAgain=re_run();
         }
+    }
+
+    private static void setter_injection() {
+        System.out.println("Setter Injection");
+        System.out.println("    The benefit of setter injection is that we can change the dependency throughout the life time of the program");
+        System.out.println("    In our TaxReport class from our Tax calculate program we create a setCalculator setter:");
+        System.out.println();
+        System.out.println(" public void setCalculator(TaxCalculator calculator) {");
+        System.out.println("    this.calculator = calculator;");
+        System.out.println(" }");
+        System.out.println();
+
+        System.out.println("    We can then for example create a new TaxCalculator class that implements the TaxCalculator interface for 2019.");
+        System.out.println("    Inside main, we use the setter to set the TaxReport to TaxCalculator2019:");
+        System.out.println();
+
+        System.out.println("public static void main(String[] args) {");
+        System.out.println(" var calculator = new TaxCalculator2018(100_000);");
+        System.out.println(" var report = new TaxReport(calculator);");
+        System.out.println(" report.show();");
+        System.out.println();
+
+        System.out.println(" report.setCalculator(new TaxCalculator2019());");
+        System.out.println(" report.show();");
+        System.out.println("}");
+        System.out.println();
+
+        System.out.println("    Constructor injection is a more common approach unless you need to use setter injection.");
+        System.out.println("    All setters should be at the end to be clean and consistent");
     }
 
     private static void constructor_injection() {
@@ -930,7 +960,7 @@ public class Main {
         System.out.println("14- Refactoring, 15- Inheritance, 16- Access Modifiers, 17-Overriding Methods, 18- Upcasting and Downcasting,");
         System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
         System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
-        System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection");
+        System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
