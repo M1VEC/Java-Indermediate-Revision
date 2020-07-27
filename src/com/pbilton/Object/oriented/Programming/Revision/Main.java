@@ -39,8 +39,37 @@ public class Main {
             else if (selectedSection == 26)tightly_coupled_code();
             else if (selectedSection == 27)creating_interfaces();
             else if (selectedSection == 28)dependency_injection();
+            else if (selectedSection == 29)constructor_injection();
             runAgain=re_run();
         }
+    }
+
+    private static void constructor_injection() {
+        System.out.println("Constructor Injection");
+        System.out.println("    We don't want our classes to be dependant on concrete implementations. We want them to use the interface.");
+        System.out.println("    Using the tightly coupled code example TaxReport class we change it from:");
+        System.out.println();
+
+        System.out.println("public TaxReport(){");
+        System.out.println(" calculator = new TaxCalculator(100_000);");
+        System.out.println("}");
+        System.out.println();
+        System.out.println("    To this:");
+        System.out.println();
+        System.out.println("public TaxReport(TaxCalculator calculator){");
+        System.out.println(" this.calculator = calculator;");
+        System.out.println("}");
+
+        System.out.println("    We added a parameter calling the interface TaxCalculator and used this.calculator for our field. ");
+        System.out.println("    This is called constructor injection. We are injecting a dependency, in this case TaxCalculator. ");
+        System.out.println("    Using this method, TaxReport does not depend on concrete implementations, it does not care if ");
+        System.out.println("    TaxCalculator2018 is changed to TaxCalculator2019. Likewise, we can change the values in calculateTax and only that");
+        System.out.println("    class will need to be recompiled. ");
+        System.out.println();
+        System.out.println("    The way we have implemented this injection is called poor mans dependency injection as we ");
+        System.out.println("    have created a new object to injected the dependency.");
+        System.out.println("    If we have hundreds of classes, we can use a dependency injection framework. Spring is one of the popular ones. ");
+
     }
 
     private static void dependency_injection() {
@@ -901,7 +930,7 @@ public class Main {
         System.out.println("14- Refactoring, 15- Inheritance, 16- Access Modifiers, 17-Overriding Methods, 18- Upcasting and Downcasting,");
         System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
         System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
-        System.out.println("27 - Creating interfaces, 28 - Dependency Injection");
+        System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
