@@ -41,8 +41,18 @@ public class Main {
             else if (selectedSection == 28)dependency_injection();
             else if (selectedSection == 29)constructor_injection();
             else if (selectedSection == 30)setter_injection();
+            else if (selectedSection == 31)method_injection();
             runAgain=re_run();
         }
+    }
+
+    private static void method_injection() {
+        System.out.println("Method Injection");
+        System.out.println("    With method injection we can pass the dependency to the method that meets that dependency. Most of the ");
+        System.out.println("    time we use constructor injection because with that approach we can quickly see the dependencies of a class.");
+        System.out.println();
+        System.out.println("    Below, we are calling the show method in the TaxReport class and injecting the dependency at the same time:");
+        System.out.println(" report.show(new TaxCalculator2019(125_000));");
     }
 
     private static void setter_injection() {
