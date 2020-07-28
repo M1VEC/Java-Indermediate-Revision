@@ -42,8 +42,49 @@ public class Main {
             else if (selectedSection == 29)constructor_injection();
             else if (selectedSection == 30)setter_injection();
             else if (selectedSection == 31)method_injection();
+            else if (selectedSection == 32)interface_segregation();
             runAgain=re_run();
         }
+    }
+
+    private static void interface_segregation() {
+        System.out.println("Interface Segregation Principle");
+        System.out.println("    Interface Segregation Principle means we should divide big interfaces into smaller ones, ");
+        System.out.println("    this will reduce the impact of changes.");
+        System.out.println();
+
+        System.out.println("    In this example we have created a new interface called UIWidget. Within this interface we");
+        System.out.println("    want to be able to drag, resize and render.");
+        System.out.println();
+        System.out.println("public interface UIWidget {");
+        System.out.println("     void drag();");
+        System.out.println("     void resize();");
+        System.out.println("     void render();");
+        System.out.println();
+
+        System.out.println("    If we create a class that utilise this interface for instance a dragger class ");
+        System.out.println("    and then we change the field for the resize method then the dragger class has to be recompiled ");
+        System.out.println("    even though it has nothing to do with the drag method. This is where Interface Segregation Principle");
+        System.out.println("    comes into play. It states that we should divide this interface into smaller ones. We want each interface");
+        System.out.println("    to only be concerned with methods that are relevant to each other.");
+        System.out.println();
+
+        System.out.println("    We separate all the methods to their own interfaces. I.e drag is put into an interface called Draggable");
+        System.out.println(" public interface Draggable {");
+        System.out.println("    void drag();");
+        System.out.println(" }");
+        System.out.println();
+
+        System.out.println("    Then in a class called Dragger, it implements the Draggable interface and ");
+        System.out.println("    the only dot operator available is the method in Draggable. However, if we wanted to be able to ");
+        System.out.println("    call all these methods then we go back to the UIWidget and extends the Draggable interface.");
+        System.out.println();
+
+        System.out.println("    When we are carrying out the above, Intellij can actually do this for us using the refactoring shortcut.");
+        System.out.println("    Select extract interface and the methods we want in that class. Select No when prompted about the usage. ");
+
+        System.out.println("    The main point to take away is not to create 3 new interfaces because we have 3 methods, but we ");
+        System.out.println("    should separate them based on their capabilities.");
     }
 
     private static void method_injection() {
@@ -971,6 +1012,7 @@ public class Main {
         System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
         System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
         System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
+        System.out.println("31 - Method Injection, 32 - Interface Segregation Principle");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
