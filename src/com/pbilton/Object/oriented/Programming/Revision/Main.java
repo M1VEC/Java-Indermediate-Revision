@@ -44,8 +44,26 @@ public class Main {
             else if (selectedSection == 31)method_injection();
             else if (selectedSection == 32)interface_segregation();
             else if (selectedSection == 33)interface_fields();
+            else if (selectedSection == 34)static_methods_interface();
             runAgain=re_run();
         }
+    }
+
+    private static void static_methods_interface() {
+        System.out.println("Static Methods and Interfaces");
+        System.out.println("    Some user's create methods that have implementation or code within them. Interface's are not designed for this,");
+        System.out.println("    the interface is about what the code should do, not how the code should do it. ");
+        System.out.println("    If we wanted to create a method that is shared across lots of classes, instead of putting the logic in the interface,  ");
+        System.out.println("    we should use an abstract class. We first define an abstract class and then move the logic there so it can be shared by all its children.");
+        System.out.println("    Once we've moved the logic to the abstract class, we don't want it to be static, instead we use the ");
+        System.out.println("    protected access modifier. It is hidden from the outside but it can be used in classes that inherit from this abstract tax calculator. ");
+        System.out.println();
+
+        System.out.println(" public abstract class AbstractTaxCalculator implements TaxCalculator {");
+        System.out.println("    protected double getTaxableIncome(double income, double expenses){");
+        System.out.println("      return income - expenses;");
+        System.out.println("    }");
+        System.out.println(" }");
     }
 
     private static void interface_fields() {
@@ -1024,7 +1042,8 @@ public class Main {
         System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
         System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
         System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
-        System.out.println("31 - Method Injection, 32 - Interface Segregation Principle, 33 - Fields and Interfaces");
+        System.out.println("31 - Method Injection, 32 - Interface Segregation Principle, 33 - Fields and Interfaces, ");
+        System.out.println(" 34 - Static Methods and Interfaces");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
