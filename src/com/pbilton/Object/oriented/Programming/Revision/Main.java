@@ -45,8 +45,17 @@ public class Main {
             else if (selectedSection == 32)interface_segregation();
             else if (selectedSection == 33)interface_fields();
             else if (selectedSection == 34)static_methods_interface();
+            else if (selectedSection == 35)private_methods_interface();
             runAgain=re_run();
         }
+    }
+
+    private static void private_methods_interface() {
+        System.out.println("Private Methods");
+        System.out.println("    Another feature introduced in Java 9 was the ability to implement private methods in ");
+        System.out.println("    an interface. Private methods are implementation details, which isn't what an ");
+        System.out.println("    interface is for. Again, an interface is like a contract, it should have no implementation, ");
+        System.out.println("    no fields, no static methods, no private methods no nothing execpt for method declarations.");
     }
 
     private static void static_methods_interface() {
@@ -1043,7 +1052,7 @@ public class Main {
         System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
         System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
         System.out.println("31 - Method Injection, 32 - Interface Segregation Principle, 33 - Fields and Interfaces, ");
-        System.out.println(" 34 - Static Methods and Interfaces");
+        System.out.println(" 34 - Static Methods and Interfaces, 35 - Private Methods and Interfaces");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
