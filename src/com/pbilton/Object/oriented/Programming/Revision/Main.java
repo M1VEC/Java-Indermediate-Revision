@@ -46,8 +46,20 @@ public class Main {
             else if (selectedSection == 33)interface_fields();
             else if (selectedSection == 34)static_methods_interface();
             else if (selectedSection == 35)private_methods_interface();
+            else if (selectedSection == 36)difference_interfaces_abstract();
             runAgain=re_run();
         }
+    }
+
+    private static void difference_interfaces_abstract() {
+        System.out.println("Whats the difference between Interfaces and abstract  classes?");
+        System.out.println("    This is a popular interview question.");
+        System.out.println("    Interfaces are like contracts used to build loosly-coupled, extensible and testable applications");
+        System.out.println("    However interfaces are being abusing interfaces to allow multiple inheritance because of the new");
+        System.out.println("    features the team behind Java have brought in.  ");
+        System.out.println();
+
+        System.out.println("    Abstract Classes are partially-completed Classes and are used to share code.");
     }
 
     private static void private_methods_interface() {
@@ -1052,7 +1064,7 @@ public class Main {
         System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
         System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
         System.out.println("31 - Method Injection, 32 - Interface Segregation Principle, 33 - Fields and Interfaces, ");
-        System.out.println(" 34 - Static Methods and Interfaces, 35 - Private Methods and Interfaces");
+        System.out.println(" 34 - Static Methods and Interfaces, 35 - Private Methods and Interfaces, 36 - Difference between Interface and Abstract");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
