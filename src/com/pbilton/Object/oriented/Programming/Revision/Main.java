@@ -43,8 +43,20 @@ public class Main {
             else if (selectedSection == 30)setter_injection();
             else if (selectedSection == 31)method_injection();
             else if (selectedSection == 32)interface_segregation();
+            else if (selectedSection == 33)interface_fields();
             runAgain=re_run();
         }
+    }
+
+    private static void interface_fields() {
+        System.out.println("Fields and Interfaces");
+        System.out.println("    Over the past few years a number of features have been implemented into ");
+        System.out.println("    Java which has changed the meaning of interfaces. One of these features is declaring fields in our interfaces.");
+        System.out.println();
+
+        System.out.println("    We should not be declaring fields in our interfaces as they are final and cannot be changed. Instead they should be");
+        System.out.println("    declared in our implementations. If we have a constance in our interface and we then change it or remove it in the future,");
+        System.out.println("    it will affect everything else tied to that interface. This is something the team behind Java has added to interfaces.");
     }
 
     private static void interface_segregation() {
@@ -1012,7 +1024,7 @@ public class Main {
         System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
         System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
         System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
-        System.out.println("31 - Method Injection, 32 - Interface Segregation Principle");
+        System.out.println("31 - Method Injection, 32 - Interface Segregation Principle, 33 - Fields and Interfaces");
         System.out.print("Which section do you want to run?:");
         int value = scanner.nextInt();
         System.out.println();
