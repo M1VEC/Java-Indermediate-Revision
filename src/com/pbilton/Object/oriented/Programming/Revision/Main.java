@@ -305,6 +305,14 @@ public class Main {
         System.out.println("    applications that are loosely coupled and extensive. ");
         System.out.println("                Interfaces                 Classes");
         System.out.println("            What should be done      How it should be done");
+        System.out.println();
+
+        System.out.println("When to use an Interface");
+        System.out.println("We should use interfaces for every class in our program, thats not what it is for. ");
+        System.out.println("The benefits of Interfaces is that we can easily swap implementations for one another.");
+        System.out.println("We can also easily extend our applications as we can program against an interface rather than a ");
+        System.out.println("concrete implementation. Another benefit is that we can test our classes in isolation, this is called Unit Testing.");
+
 
     }
 
