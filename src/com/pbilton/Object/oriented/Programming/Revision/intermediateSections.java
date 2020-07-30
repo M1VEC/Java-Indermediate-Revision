@@ -1,7 +1,8 @@
 package com.pbilton.Object.oriented.Programming.Revision;
-public class sections {
+public class intermediateSections implements sectionInterface{
 
-    public static void runSelection(int selectedSection) {
+    @Override
+    public void runSelection(int selectedSection) {
         if (selectedSection == 0) tips();
         else if (selectedSection == 1) introduction();
         else if (selectedSection == 2) understandingClasses();

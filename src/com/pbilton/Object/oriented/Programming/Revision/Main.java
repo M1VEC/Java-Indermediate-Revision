@@ -8,14 +8,15 @@ public class Main {
         String runAgain = "";
         while (!runAgain.equals("n")) {
             int selectedSection = selectSection();
-
-            sections.runSelection(selectedSection);
+            var start = new intermediateSections();
+            start.runSelection(selectedSection);
+//            intermediateSections.runSelection(selectedSection);
 
             runAgain=re_run();
         }
     }
 
-    public static int selectSection(){
+    private static int selectSection(){
         System.out.println("0- Tips, 1- Introduction, 2- Understanding Class, 3-Creating Classes, 4- Creating Objects");
         System.out.println("5- Memory Allocation, 6- Procedural Programming, 7- Encapsulation, 8- Setters and Getters");
         System.out.println("9- Abstraction, 10- Coupling, 11- Constructors, 12- Method Overloading, 13- Constructor Overloading");
