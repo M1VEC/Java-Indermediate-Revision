@@ -19,8 +19,9 @@ public class intermediateSections implements sectionInterface{
         System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
         System.out.println("31 - Method Injection, 32 - Interface Segregation Principle, 33 - Fields and Interfaces, ");
         System.out.println("34 - Static Methods and Interfaces, 35 - Private Methods and Interfaces, 36 - Difference between Interface and Abstract");
-        int value = userInput.numberPrompt("Which section do you want to run?:");
-        System.out.println();
+        int value = consoleInteraction.numberPrompt("Which section do you want to run?:");
+        consoleInteraction.separator();
+        consoleInteraction.blank();
         return value;
     }
 

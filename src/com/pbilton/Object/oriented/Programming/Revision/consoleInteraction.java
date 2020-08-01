@@ -2,7 +2,7 @@ package com.pbilton.Object.oriented.Programming.Revision;
 
 import java.util.Scanner;
 
-public class userInput {
+public class consoleInteraction {
     static Scanner scanner = new Scanner(System.in);
 
     public static String stringPrompt(String prompt) {
@@ -15,5 +15,13 @@ public class userInput {
         System.out.print(prompt);
         int value = scanner.nextInt();
         return value;
+    }
+
+    public static void blank(){
+        System.out.println();
+    }
+
+    public static void separator(){
+        System.out.println("---------------------------------------------------------------------------------");
     }
 }
