@@ -1,5 +1,28 @@
 package com.pbilton.Object.oriented.Programming.Revision;
+
 public class intermediateSections implements sectionInterface{
+
+    @Override
+    public void sectionCommand(){
+        int option = selectSection();
+        runSelection(option);
+    }
+
+    @Override
+    public int selectSection(){
+        System.out.println("0- Tips, 1- Introduction, 2- Understanding Class, 3-Creating Classes, 4- Creating Objects");
+        System.out.println("5- Memory Allocation, 6- Procedural Programming, 7- Encapsulation, 8- Setters and Getters");
+        System.out.println("9- Abstraction, 10- Coupling, 11- Constructors, 12- Method Overloading, 13- Constructor Overloading");
+        System.out.println("14- Refactoring, 15- Inheritance, 16- Access Modifiers, 17-Overriding Methods, 18- Upcasting and Downcasting,");
+        System.out.println("19- Comparing Objects, 20- Polymorphism, 21- Abstract Classes and Methods, 22- Final Classes and Methods,");
+        System.out.println("23 - Deep inheritance Hierarchies, 24 - Multiple Inheritance, 25 - Interfaces, 26 - Tightly Coupled Code,");
+        System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
+        System.out.println("31 - Method Injection, 32 - Interface Segregation Principle, 33 - Fields and Interfaces, ");
+        System.out.println("34 - Static Methods and Interfaces, 35 - Private Methods and Interfaces, 36 - Difference between Interface and Abstract");
+        int value = userInput.numberPrompt("Which section do you want to run?:");
+        System.out.println();
+        return value;
+    }
 
     @Override
     public void runSelection(int selectedSection) {
@@ -298,12 +321,10 @@ public class intermediateSections implements sectionInterface{
         System.out.println();
 
         System.out.println("When to use an Interface");
-        System.out.println("We should use interfaces for every class in our program, thats not what it is for. ");
+        System.out.println("We shouldn't use interfaces for every class in our program, thats not what it is for. ");
         System.out.println("The benefits of Interfaces is that we can easily swap implementations for one another.");
         System.out.println("We can also easily extend our applications as we can program against an interface rather than a ");
         System.out.println("concrete implementation. Another benefit is that we can test our classes in isolation, this is called Unit Testing.");
-
-
     }
 
     private static void multiple_inheritance() {
@@ -329,7 +350,6 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    We can also declare methods as final. When doing so, we cannot override it.");
         System.out.println("    We use final when we have made certain assumptions and we don't ");
         System.out.println("    want subclasses to accidentally change the behaviour of or break our assumptions.");
-
     }
 
     private static void abstract_classes_methods() {
@@ -1052,5 +1072,4 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    like hashCode(),equals(),notify etc");
         System.out.println();
     }
-
 }
