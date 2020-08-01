@@ -12,7 +12,7 @@ public class userInput {
     }
 
     public static int numberPrompt(String prompt){
-        System.out.println(prompt);
+        System.out.print(prompt);
         int value = scanner.nextInt();
         return value;
     }
