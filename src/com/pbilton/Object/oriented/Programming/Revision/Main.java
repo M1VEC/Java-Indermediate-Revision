@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
         menus.firstRun();
         String runAgain = "";
-        var intermediate = new intermediateSections();
-        var fundamentals = new fundamentalSection();
+        sectionInterface intermediate = new intermediateSections();
+        sectionInterface fundamentals = new fundamentalSection();
 
         while (!runAgain.equals("n")) {
             int mainMenu = menus.mainMenuSelect();
