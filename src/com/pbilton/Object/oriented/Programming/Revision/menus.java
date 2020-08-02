@@ -1,28 +1,31 @@
 package com.pbilton.Object.oriented.Programming.Revision;
 
-public class menus {
+public class menus extends consoleInteraction {
 
-    public static void firstRun(){
+    public void firstRun(){
+       blank();
        System.out.println("Welcome to Java Revision");
        System.out.println("This program is designed to allow the user to go over topics that have been taught");
        System.out.println("following the Java course provided by Code With Mosh, by Mosh Hamedani.");
-        consoleInteraction.blank();
+       blank();
     }
 
-    public static int mainMenuSelect(){
+    public int mainMenuSelect(){
        System.out.println("Please select one of the following:");
        System.out.println(" 1 - Java Fundamentals");
        System.out.println(" 2 - Java Intermediate");
-       int value= consoleInteraction.numberPrompt("Option: ");
-       consoleInteraction.separator();
+       int value= numberPrompt("Option: ");
+       separator();
        return value;
     }
 
-    public static String re_run() {
+    public String re_run() {
         System.out.println();
+        separator();
         System.out.println("Would you like to run through again?");
-        String value = consoleInteraction.stringPrompt("Y or N").toLowerCase();
-        System.out.println();
+        String value = stringPrompt("Y or N").toLowerCase();
+        blank();
+        if (value.equals("y")) separator();
         return value;
     }
 }

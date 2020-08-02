@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class consoleInteraction {
     static Scanner scanner = new Scanner(System.in);
 
-    public static String stringPrompt(String prompt) {
+    public String stringPrompt(String prompt) {
         System.out.println(prompt);
         String value = scanner.next();
         return value;
     }
 
-    public static int numberPrompt(String prompt){
+    public int numberPrompt(String prompt){
         System.out.print(prompt);
         int value = scanner.nextInt();
         return value;
@@ -21,7 +21,7 @@ public class consoleInteraction {
         System.out.println();
     }
 
-    public static void separator(){
+    public void separator(){
         System.out.println("---------------------------------------------------------------------------------");
     }
 }

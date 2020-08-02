@@ -1,6 +1,6 @@
 package com.pbilton.Object.oriented.Programming.Revision;
 
-public class intermediateSections implements sectionInterface{
+public class intermediateSections extends consoleInteraction implements sectionInterface {
 
     @Override
     public void sectionCommand(){
@@ -19,9 +19,9 @@ public class intermediateSections implements sectionInterface{
         System.out.println("27 - Creating interfaces, 28 - Dependency Injection, 29 - Constructor Injection, 30 - Setter Injection");
         System.out.println("31 - Method Injection, 32 - Interface Segregation Principle, 33 - Fields and Interfaces, ");
         System.out.println("34 - Static Methods and Interfaces, 35 - Private Methods and Interfaces, 36 - Difference between Interface and Abstract");
-        int value = consoleInteraction.numberPrompt("Which section do you want to run?:");
-        consoleInteraction.separator();
-        consoleInteraction.blank();
+        int value = numberPrompt("Which section do you want to run?:");
+        separator();
+        blank();
         return value;
     }
 
@@ -72,7 +72,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Interfaces are like contracts used to build loosly-coupled, extensible and testable applications");
         System.out.println("    However interfaces are being abusing interfaces to allow multiple inheritance because of the new");
         System.out.println("    features the team behind Java have brought in.  ");
-        System.out.println();
+        blank();
         System.out.println("    Abstract Classes are partially-completed Classes and are used to share code.");
     }
 
@@ -81,7 +81,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Another feature introduced in Java 9 was the ability to implement private methods in ");
         System.out.println("    an interface. Private methods are implementation details, which isn't what an ");
         System.out.println("    interface is for. Again, an interface is like a contract, it should have no implementation, ");
-        System.out.println("    no fields, no static methods, no private methods no nothing execpt for method declarations.");
+        System.out.println("    no fields, no static methods, no private methods no nothing except for method declarations.");
     }
 
     private static void static_methods_interface() {
@@ -92,7 +92,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    we should use an abstract class. We first define an abstract class and then move the logic there so it can be shared by all its children.");
         System.out.println("    Once we've moved the logic to the abstract class, we don't want it to be static, instead we use the ");
         System.out.println("    protected access modifier. It is hidden from the outside but it can be used in classes that inherit from this abstract tax calculator. ");
-        System.out.println();
+        blank();
 
         System.out.println(" public abstract class AbstractTaxCalculator implements TaxCalculator {");
         System.out.println("    protected double getTaxableIncome(double income, double expenses){");
@@ -105,7 +105,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("Fields and Interfaces");
         System.out.println("    Over the past few years a number of features have been implemented into ");
         System.out.println("    Java which has changed the meaning of interfaces. One of these features is declaring fields in our interfaces.");
-        System.out.println();
+        blank();
 
         System.out.println("    We should not be declaring fields in our interfaces as they are final and cannot be changed. Instead they should be");
         System.out.println("    declared in our implementations. If we have a constance in our interface and we then change it or remove it in the future,");
@@ -116,34 +116,34 @@ public class intermediateSections implements sectionInterface{
         System.out.println("Interface Segregation Principle");
         System.out.println("    Interface Segregation Principle means we should divide big interfaces into smaller ones, ");
         System.out.println("    this will reduce the impact of changes.");
-        System.out.println();
+        blank();
 
         System.out.println("    In this example we have created a new interface called UIWidget. Within this interface we");
         System.out.println("    want to be able to drag, resize and render.");
-        System.out.println();
+        blank();
         System.out.println("public interface UIWidget {");
         System.out.println("     void drag();");
         System.out.println("     void resize();");
         System.out.println("     void render();");
-        System.out.println();
+        blank();
 
         System.out.println("    If we create a class that utilise this interface for instance a dragger class ");
         System.out.println("    and then we change the field for the resize method then the dragger class has to be recompiled ");
         System.out.println("    even though it has nothing to do with the drag method. This is where Interface Segregation Principle");
         System.out.println("    comes into play. It states that we should divide this interface into smaller ones. We want each interface");
         System.out.println("    to only be concerned with methods that are relevant to each other.");
-        System.out.println();
+        blank();
 
         System.out.println("    We separate all the methods to their own interfaces. I.e drag is put into an interface called Draggable");
         System.out.println(" public interface Draggable {");
         System.out.println("    void drag();");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
         System.out.println("    Then in a class called Dragger, it implements the Draggable interface and ");
         System.out.println("    the only dot operator available is the method in Draggable. However, if we wanted to be able to ");
         System.out.println("    call all these methods then we go back to the UIWidget and extends the Draggable interface.");
-        System.out.println();
+        blank();
 
         System.out.println("    When we are carrying out the above, Intellij can actually do this for us using the refactoring shortcut.");
         System.out.println("    Select extract interface and the methods we want in that class. Select No when prompted about the usage. ");
@@ -156,7 +156,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("Method Injection");
         System.out.println("    With method injection we can pass the dependency to the method that meets that dependency. Most of the ");
         System.out.println("    time we use constructor injection because with that approach we can quickly see the dependencies of a class.");
-        System.out.println();
+        blank();
         System.out.println("    Below, we are calling the show method in the TaxReport class and injecting the dependency at the same time:");
         System.out.println(" report.show(new TaxCalculator2019(125_000));");
     }
@@ -165,26 +165,26 @@ public class intermediateSections implements sectionInterface{
         System.out.println("Setter Injection");
         System.out.println("    The benefit of setter injection is that we can change the dependency throughout the life time of the program");
         System.out.println("    In our TaxReport class from our Tax calculate program we create a setCalculator setter:");
-        System.out.println();
+        blank();
         System.out.println(" public void setCalculator(TaxCalculator calculator) {");
         System.out.println("    this.calculator = calculator;");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
         System.out.println("    We can then for example create a new TaxCalculator class that implements the TaxCalculator interface for 2019.");
         System.out.println("    Inside main, we use the setter to set the TaxReport to TaxCalculator2019:");
-        System.out.println();
+        blank();
 
         System.out.println("public static void main(String[] args) {");
         System.out.println(" var calculator = new TaxCalculator2018(100_000);");
         System.out.println(" var report = new TaxReport(calculator);");
         System.out.println(" report.show();");
-        System.out.println();
+        blank();
 
         System.out.println(" report.setCalculator(new TaxCalculator2019());");
         System.out.println(" report.show();");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("    Constructor injection is a more common approach unless you need to use setter injection.");
         System.out.println("    All setters should be at the end to be clean and consistent");
@@ -194,14 +194,14 @@ public class intermediateSections implements sectionInterface{
         System.out.println("Constructor Injection");
         System.out.println("    We don't want our classes to be dependant on concrete implementations. We want them to use the interface.");
         System.out.println("    Using the tightly coupled code example TaxReport class we change it from:");
-        System.out.println();
+        blank();
 
         System.out.println("public TaxReport(){");
         System.out.println(" calculator = new TaxCalculator(100_000);");
         System.out.println("}");
-        System.out.println();
+        blank();
         System.out.println("    To this:");
-        System.out.println();
+        blank();
         System.out.println("public TaxReport(TaxCalculator calculator){");
         System.out.println(" this.calculator = calculator;");
         System.out.println("}");
@@ -211,7 +211,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Using this method, TaxReport does not depend on concrete implementations, it does not care if ");
         System.out.println("    TaxCalculator2018 is changed to TaxCalculator2019. Likewise, we can change the values in calculateTax and only that");
         System.out.println("    class will need to be recompiled. ");
-        System.out.println();
+        blank();
         System.out.println("    The way we have implemented this injection is called poor mans dependency injection as we ");
         System.out.println("    have created a new object to injected the dependency.");
         System.out.println("    If we have hundreds of classes, we can use a dependency injection framework. Spring is one of the popular ones. ");
@@ -233,23 +233,23 @@ public class intermediateSections implements sectionInterface{
         System.out.println("Creating an Interface");
         System.out.println("    To create a new interface in Intellij, go to the projects tab and select new class,");
         System.out.println("    then we can change the type to interface.");
-        System.out.println();
+        blank();
 
         System.out.println("    In C sharpe, user's prefix the name of interfaces with I. e.g ICalculateTax");
         System.out.println("    In java, one way to prefix an interface is to use Can e.g CanCalculateTax");
         System.out.println("    and another way is able e.g Draggable or Resizable.");
-        System.out.println();
+        blank();
 
         System.out.println("    In the interface we don't have any states or fields, we only have method declarations ");
         System.out.println("    that determine what needs to be done.");
         System.out.println("    As the interface only contains methods that must be implemented by a class, there is no ");
         System.out.println("    need for the public key word when declaring methods.");
-        System.out.println();
+        blank();
         System.out.println("    We can not instantiate a interface like a class e.g var c = new TaxInterface();");
         System.out.println("    Instead we use the implements key word when declaring our class");
-        System.out.println();
+        blank();
         System.out.println(" public class TaxCalculator2018 implements TaxCalculator {");
-        System.out.println();
+        blank();
 
         System.out.println("    As best practice we should also apply the @Override annotation for interface methods.");
         System.out.println("    The benefit of using this annotation is if at some point we remove the method call from the interface,");
@@ -263,7 +263,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    If we were to code this, and then modify the constructors for example an add an extra parameter,");
         System.out.println("    then we have to modify the Tax report constructor. This isn't to bad for a small program, but ");
         System.out.println("    if we are creating a large program with 10 classes linked to the Tax Calculator we will have change them all.");
-        System.out.println();
+        blank();
 
         System.out.println("public class TaxCalculator {");
         System.out.println("   private double taxableIncome;");
@@ -274,22 +274,22 @@ public class intermediateSections implements sectionInterface{
         System.out.println("            return taxableIncome * 0.3;");
         System.out.println("        }");
         System.out.println("    }");
-        System.out.println();
+        blank();
 
         System.out.println("    Then we have the report class:");
-        System.out.println();
+        blank();
         System.out.println("   public class TaxReport {");
         System.out.println("    private TaxCalculator calculator;");
         System.out.println("       public TaxReport(){");
         System.out.println("         calculator = new TaxCalculator(100_000);");
         System.out.println("       }");
-        System.out.println();
+        blank();
         System.out.println("       public void show(){");
         System.out.println("         var tax = calculator.calculateTax();");
         System.out.println("         System.out.println(tax);");
         System.out.println("       }");
         System.out.println("   }");
-        System.out.println();
+        blank();
         System.out.println("    You can see that the report class is tightly coupled, we can solve this by Programming with Interfaces");
     }
 
@@ -301,15 +301,15 @@ public class intermediateSections implements sectionInterface{
         System.out.println("            A is coupled to B");
         System.out.println("    When classes are coupled together and we make changes,");
         System.out.println("    potentially hundreds of lines of code need to be changed and recompiled.");
-        System.out.println();
+        blank();
         System.out.println("    Using Abstraction, we want to hide the implementation details and only expose what is necessary.");
         System.out.println("    Using private key word, Class A will know less about Class B");
         System.out.println("        A - - - B");
         System.out.println("    But this is still not enough. This is where Interfaces comes in.");
-        System.out.println();
+        blank();
         System.out.println("    With an interface Class A knows nothing about Class B, like it doesn't even exist.");
         System.out.println("    If we change B, then Class A will not be effected. ");
-        System.out.println();
+        blank();
         System.out.println("    An interface is a type similar to a class, but it only includes method declarations, no implementations or code.");
         System.out.println("    It only defines the capabilities that a class should have.");
         System.out.println("            \t\tA----->Interface<-----B");
@@ -319,7 +319,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    applications that are loosely coupled and extensive. ");
         System.out.println("                Interfaces                 Classes");
         System.out.println("            What should be done      How it should be done");
-        System.out.println();
+        blank();
 
         System.out.println("When to use an Interface");
         System.out.println("We shouldn't use interfaces for every class in our program, thats not what it is for. ");
@@ -347,7 +347,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    We use final classes when we are 100% sure of its implementation and we want to prevent other");
         System.out.println("    classes from extending that class. We shouldn't really use final classes as it ");
         System.out.println("    prevents us from using inheritance and polymorphism.");
-        System.out.println();
+        blank();
         System.out.println("    We can also declare methods as final. When doing so, we cannot override it.");
         System.out.println("    We use final when we have made certain assumptions and we don't ");
         System.out.println("    want subclasses to accidentally change the behaviour of or break our assumptions.");
@@ -359,17 +359,17 @@ public class intermediateSections implements sectionInterface{
         System.out.println("public abstract class UIControl {");
         System.out.println("   private boolean isEnabled = true;");
         System.out.println("}");
-        System.out.println();
+        blank();
         System.out.println("    We can also make methods in the abstract class abstract themselves. This will force any classes that");
         System.out.println("    derive from the UIControl to implement this method");
         System.out.println("public abstract void render();");
-        System.out.println();
+        blank();
     }
 
     private static void polymorphism() {
         System.out.println("Polymorphism");
         System.out.println("    Polymorphism means Many forms, it allows an object to take different forms.");
-        System.out.println();
+        blank();
         System.out.println("public static void main(String[] args) {");
         System.out.println("    UIControl[] controls = {new TextBox(), new CheckBox()};");
         System.out.println("    for (var control : controls) {");
@@ -389,28 +389,28 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    If we create a new class and then two instances of that class and then try");
         System.out.println("    to compare the two values, it will always return false. This is because it is comparing");
         System.out.println("    the memory location of two values.");
-        System.out.println();
+        blank();
 
         System.out.println("    We need to override the base class of the equals method. In the example below we have the main class:");
         System.out.println("public static void main(String[] args) {");
-        System.out.println();
+        blank();
         System.out.println("    var point1 = new Point(1,2);");
         System.out.println("    var point2 = new Point(1,2);");
         System.out.println("    System.out.println(point1.equals(point2));");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("    In the objects class called Point we have:");
-        System.out.println();
+        blank();
         System.out.println("public class Point {");
         System.out.println("    private int x;");
         System.out.println("    private int y;");
-        System.out.println();
+        blank();
         System.out.println("public Point(int x, int y) {");
         System.out.println("    this.x = x;");
         System.out.println("    this.y = y;");
         System.out.println("}");
-        System.out.println();
+        blank();
         System.out.println("@Override");
         System.out.println("public boolean equals(Object obj) {");
         System.out.println("    if (!(obj instanceof Point))");
@@ -418,7 +418,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("        var other = (Point)obj;");
         System.out.println("        return other.x == x && other.y == y;");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("    When we override the equals method we can literally pass any object through.");
         System.out.println("    This will throw an exception. To combat this we use a if statement to check that it's");
@@ -426,7 +426,7 @@ public class intermediateSections implements sectionInterface{
 
         System.out.println("    When we override the equals method, we should also override the hashcode method.");
         System.out.println("    This will then compare the hash of the contents rather than the address of the object in memory.");
-        System.out.println();
+        blank();
 
         System.out.println("@Override");
         System.out.println("public int hashCode() {");
@@ -441,14 +441,14 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Upcasting, objects within the Sub class gets casted to its parent class");
         System.out.println("    The example shows the textBox being upcasted to the UIControl as that is the parent");
         System.out.println("    Class for the TextBox class");
-        System.out.println();
+        blank();
 
         System.out.println("public static void main(String[] args) {");
         System.out.println("    var control = new UIControl(true);");
         System.out.println("    var textBox = new TextBox();");
         System.out.println("    show(textBox);");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println(" public static void show(UIControl control){");
         System.out.println("    System.out.println(control);");
@@ -460,7 +460,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    work in the members of the ui control, unless we explicitly cast this control object");
         System.out.println("    to a different type. This is what we call down casting.");
         System.out.println("    Do do this we add the following to the above example:");
-        System.out.println();
+        blank();
 
         System.out.println(" public static void show(UIControl control){");
         System.out.println("    if (control instanceof TextBox) {");
@@ -469,7 +469,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    }");
         System.out.println(" }");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("    Before we are casting we need to make sure that the object");
         System.out.println("    passed here at runtime is an instance of the text box class. ");
@@ -481,12 +481,12 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    This is what we call Method Overriding. For example if we want to print");
         System.out.println("    A textBox.toString it will print the memory location, not the string. We have");
         System.out.println("    to override this base class by using the following:");
-        System.out.println();
+        blank();
         System.out.println(" @Override");
         System.out.println(" public String toString(){");
         System.out.println("    return text;");
         System.out.println(" }");
-        System.out.println();
+        blank();
         System.out.println("    This will now override the base method and return the text stored");
         System.out.println("    in the text box.");
     }
@@ -504,12 +504,12 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Inheritance means that we can set behaviours in the Base/Super/Parent class and these can be passed");
         System.out.println("    onto the Sub/Child Class. The Child class inherits these behaviours");
         System.out.println("    If we have two classes, we can extend the parent class methods into the Child Class, which can then be called upon");
-        System.out.println();
+        blank();
 
         System.out.println(" public class UiControl extends TextBox{");
         System.out.println("    When we create a new UiControl object, we can now call upon the methods within the TextBox Class by extending the TextBox");
         System.out.println("    We can then access this using the dot operator in the parent object");
-        System.out.println();
+        blank();
 
         System.out.println("Inheritance and Constructors");
         System.out.println("    When using Inheritance, the Base Constructor is ran first, then the sub class constructor is ran ");
@@ -518,7 +518,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    The super() statement needs to be the first command in the sub constructor");
         System.out.println("public TextBox() {");
         System.out.println(" super(true);");
-        System.out.println();
+        blank();
         System.out.println("    Try to keep inheritance to minimum levels as possible.");
     }
 
@@ -528,7 +528,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    want to use the Refactor tool and it sub menus");
         System.out.println("    Intellij will make the required changes in the code automatically to ");
         System.out.println("    minimise errors.");
-        System.out.println();
+        blank();
 
         System.out.println("Extracting a Class from the Main:");
         System.out.println("    Place the cursor on the method name, then select Refactor and 'Refactor This'");
@@ -538,11 +538,11 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    will create the new class if it isn't already created.");
         System.out.println("    Intellij will also import anything that is needed like the Scanner class, it will adjust any ");
         System.out.println("    code that calls the class we just moved. This is called 'Safe Refactoring'");
-        System.out.println();
+        blank();
 
         System.out.println("    Under the 'Code' menu, we can select 'Generate' with this tool we can generate");
         System.out.println("    Constructors, Setters and Getters among other things");
-        System.out.println();
+        blank();
     }
 
     private static void constructor_overloading() {
@@ -550,7 +550,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Overloading the constructor method is when we want to pass less parameters,");
         System.out.println("    we can duplicate the constructor but without the parameter that is 0,");
         System.out.println("    but leave the original constructor for when we do need the extra parameter");
-        System.out.println();
+        blank();
 
         System.out.println("Main Class:");
         System.out.println(" public static void main(String[] args) {");
@@ -559,21 +559,21 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    int wage = employee.calculateWage(10);");
         System.out.println("    System.out.println(wage);");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
         System.out.println("Employee Class:");
         System.out.println(" public Employee(int baseSalary){");
         System.out.println("        //Overloaded Constructor method");
         System.out.println("    this(baseSalary, 0 );");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
         System.out.println(" public Employee(int baseSalary, int hourlyRate){");
         System.out.println("        //Original Constructor method");
         System.out.println("    setBaseSalary(baseSalary);");
         System.out.println("    setHourlyRate(hourlyRate);");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
 //        new Employee(50_000);
 //        var employee = new Employee(50_000, 20);
@@ -589,12 +589,12 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    However, it is useful when using completely different parameters");
         System.out.println("    To do Method Overloading, highlight the method in question, press ctl + D");
         System.out.println("    Then call the original method with the new parameters i.e");
-        System.out.println();
+        blank();
 
         System.out.println(" public int calculateWage(){");
         System.out.println("    return calculateWage(0);");
         System.out.println(" }");
-        System.out.println();
+        blank();
     }
 
     private static void constructor() {
@@ -603,7 +603,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    If we don't create Constructors, the Java compiler will and set all values to");
         System.out.println("    default. I.e boolean to false, int's to 0 etc");
         System.out.println("    The Constructor in a class always has the same name as the class it's representing.");
-        System.out.println();
+        blank();
 
         System.out.println("Main Class:");
         System.out.println("public static void main(String[] args) {");
@@ -611,44 +611,44 @@ public class intermediateSections implements sectionInterface{
         System.out.println("  int wage = employee.calculateWage(10);");
         System.out.println("  System.out.println(wage);");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("In the Employee Class, the values are passed to a Constructor method");
 
         System.out.println("public class Employee {");
         System.out.println("    private int baseSalary;");
         System.out.println("    private int hourlyRate;");
-        System.out.println();
+        blank();
 
         System.out.println("    public Employee(int baseSalary, int hourlyRate){   //Constructor Method");
         System.out.println("        setBaseSalary(baseSalary);");
         System.out.println("        setHourlyRate(hourlyRate);");
         System.out.println("    }");
-        System.out.println();
+        blank();
 
         System.out.println("    public int calculateWage(int extraHours){");
         System.out.println("        return baseSalary +(hourlyRate*extraHours);");
         System.out.println("    }");
-        System.out.println();
+        blank();
 
         System.out.println("    private void setBaseSalary(int baseSalary) {");
         System.out.println("        if (baseSalary <=0)");
         System.out.println("            throw new IllegalArgumentException(\"Salary cannot be 0 or less\");");
         System.out.println("        this.baseSalary = baseSalary;");
         System.out.println("    }");
-        System.out.println();
+        blank();
 
         System.out.println("    private int getBaseSalary() {");
         System.out.println("        return baseSalary;");
         System.out.println("    }");
-        System.out.println();
+        blank();
 
         System.out.println("    private void setHourlyRate(int hourlyRate) {");
         System.out.println("        if (hourlyRate <=0)");
         System.out.println("            throw new IllegalArgumentException(\"Hourly rate cannot be less than 0\");");
         System.out.println("        this.hourlyRate = hourlyRate;");
         System.out.println("    }");
-        System.out.println();
+        blank();
 
         System.out.println("    private int getHourlyRate() {");
         System.out.println("        return hourlyRate;");
@@ -663,20 +663,20 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Its best to reduce the dependency of one class to another");
         System.out.println("    If Class A is dependant on Class B and Class B is dependant on Class C, and then we");
         System.out.println("    need to modify Class C, Class B will also need modifying and likely so will Class A");
-        System.out.println();
+        blank();
 
         System.out.println("    When we create a new class, separate from our Main class, we only want the Main class to have access");
         System.out.println("    to the methods from the separate class that it needs to. We do this by changing the access modifier");
         System.out.println("    for that method to private. That method can then only be called in the class it was created");
         System.out.println("    This will reduce the chances of errors in the Main class if we decide to modify a method in the");
         System.out.println("    separate class. We are reducing the coupling effect");
-        System.out.println();
+        blank();
     }
 
     private static void abstraction() {
         System.out.println("Abstraction");
         System.out.println("    Abstraction means 'Reduce complexity by hiding unnecessary details'");
-        System.out.println();
+        blank();
     }
 
     private static void getters_setters() {
@@ -686,7 +686,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    and then right click the variable. Select Refactor and then encapsulate fields ");
         System.out.println("    This will give you the option to automatically create Setters and Getters for that variable");
         System.out.println("    We can change our example code to represent this");
-        System.out.println();
+        blank();
 
         System.out.println("    In the main class it would look like this:");
         System.out.println("var employee1 = new Employee();");
@@ -694,35 +694,35 @@ public class intermediateSections implements sectionInterface{
         System.out.println("employee1.setHourlyRate(20);");
         System.out.println("int wage1 = employee1.calculateWage(10);");
         System.out.println("System.out.println(wage1);");
-        System.out.println();
+        blank();
 
         System.out.println("var employee2 = new Employee();");
         System.out.println("employee2.setBaseSalary(30_000);");
         System.out.println("employee2.setHourlyRate(40);");
         System.out.println("int wage2 = employee2.calculateWage(50);");
         System.out.println("System.out.println(wage2);");
-        System.out.println();
+        blank();
 
         System.out.println("    Using the above method, we can pass the salary, hourly rate and extra hours to our employee class");
         System.out.println("    In return we get the values we need and gets put in wage. Using this method we can reuse the same class");
         System.out.println("    over and over but the fields have independent values");
-        System.out.println();
+        blank();
 
         System.out.println("    The employee class will look like this:");
         System.out.println(" public class Employee {");
         System.out.println("    private int baseSalary;");
         System.out.println("    private int hourlyRate;");
-        System.out.println();
+        blank();
 
         System.out.println(" public int calculateWage(int extraHours){");
         System.out.println("  return baseSalary +(hourlyRate*extraHours);");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
         System.out.println(" public int getBaseSalary() {");
         System.out.println("  return baseSalary;");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
         System.out.println(" public void setBaseSalary(int baseSalary) {");
         System.out.println("    if (baseSalary <=0)");
@@ -731,12 +731,12 @@ public class intermediateSections implements sectionInterface{
         System.out.println("        // pass the error reason to the user");
         System.out.println("    this.baseSalary = baseSalary;");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
         System.out.println(" public int getHourlyRate() {");
         System.out.println("  return hourlyRate;");
         System.out.println(" }");
-        System.out.println();
+        blank();
 
         System.out.println(" public void setHourlyRate(int hourlyRate) {");
         System.out.println("    if (hourlyRate <=0)");
@@ -744,17 +744,17 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    this.hourlyRate = hourlyRate;");
         System.out.println(" }");
         System.out.println("}");
-        System.out.println();
+        blank();
     }
 
     private static void encapsulation() {
         System.out.println("Encapsulation");
         System.out.println("    Bundle the data and methods that operate on the data in a single unit");
-        System.out.println();
+        blank();
 
         System.out.println("    In our Main class we can cut the example down to a few lines of code by encapsulating");
         System.out.println("    everything into new classes within the src folder");
-        System.out.println();
+        blank();
 
         System.out.println("public static void main(String[] args) {");
         System.out.println(" var employee = new Employee();");
@@ -763,11 +763,11 @@ public class intermediateSections implements sectionInterface{
         System.out.println(" int wage = employee.calculateWage(10);");
         System.out.println(" System.out.println(wage);");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("    We then create a new class called Employee and use the dot operator to use");
         System.out.println("    the calculateWage method, with this we send the int extraHours");
-        System.out.println();
+        blank();
 
         System.out.println("    The Employee Class looks like this:");
         System.out.println("public class Employee {");
@@ -775,54 +775,54 @@ public class intermediateSections implements sectionInterface{
         System.out.println(" public int hourlyRate;");
         System.out.println("    We don't want to set these variables as that would make the values the same for");
         System.out.println("    every employee");
-        System.out.println();
+        blank();
 
         System.out.println(" public int calculateWage(int extraHours){");
         System.out.println("    We don't need to pass the parameters in the method call as we are storing them");
         System.out.println("    inside the main field in this Class");
-        System.out.println();
+        blank();
 
         System.out.println("    return baseSalary +(hourlyRate*extraHours);");
         System.out.println(" }");
         System.out.println("}");
-        System.out.println();
+        blank();
     }
 
     private static void proceduralProgramming() {
         System.out.println("Procedural Programming");
         System.out.println("    If this program had more features, the main method would end up quite large. This style of");
         System.out.println("    programming is just calling other methods, in a very procedural way");
-        System.out.println();
+        blank();
 
         System.out.println("public static void main(String[] args) {");
         System.out.println(" int baseSalary = 50_000;");
         System.out.println(" int extraHours = 10;");
         System.out.println(" int hourlyRate = 20;");
-        System.out.println();
+        blank();
 
         System.out.println(" int wage = calculateWage(baseSalary,extraHours,hourlyRate);");
         System.out.println(" System.out.println(wage);");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("public static int calculateWage(int baseSalary, int extraHours, int hourlyRate){");
         System.out.println(" return baseSalary +(extraHours*hourlyRate);");
-        System.out.println();
+        blank();
 
         System.out.println("    Procedural programs are very hard to maintain,as soon as you change something,");
         System.out.println("    the code will break and make it very hard to find the fault");
         System.out.println("    There is also the lack of reusability because everything is linked to each other.");
-        System.out.println();
+        blank();
     }
 
     private static void memoryAllocation() {
         System.out.println("Memory Allocation");
-        System.out.println();
+        blank();
 
         System.out.println("    There is two different areas of memory that data is stored, Heap & Stack");
         System.out.println("    Heap: Heap is where it stores Objects data");
         System.out.println("    Stack: Stack is where it stores Primitives and short-lived variables");
-        System.out.println();
+        blank();
 
         System.out.println("Example 1");
         System.out.println("var textBox1 = new TextBox();");
@@ -830,7 +830,7 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    It will then execute the lefthand side and allocate memory on the stack. It will store the Heap memory");
         System.out.println("    address of the TextBox and store it on the Stack. This is why they are called reference variables, as");
         System.out.println("    they reference the memory location, not the actual values.");
-        System.out.println();
+        blank();
 
         System.out.println("Example 2");
         System.out.println("var textBox1 = new TextBox();");
@@ -839,35 +839,35 @@ public class intermediateSections implements sectionInterface{
         System.out.println("System.out.println(textBox1.text);");
         System.out.println("    textBox1 & textBox2 will always be the same value,");
         System.out.println("    as both are referencing the same object");
-        System.out.println();
+        blank();
 
         System.out.println("    Once the Main method is finished executing, the values in the Stack memory is automatically removed");
         System.out.println("    As the object on the Heap is no longer referenced it has no purpose. After a certain amount of time Java");
         System.out.println("    will remove this. This is called garbage collection.");
-        System.out.println();
+        blank();
     }
 
     private static void creatingObjects() {
         System.out.println("Creating Objects");
-        System.out.println();
+        blank();
 
         System.out.println("var textBox1 = new TextBox();");
         System.out.println("    We are creating a new instance of the class TextBox and calling it textbox1");
-        System.out.println();
+        blank();
 
         System.out.println("textBox1.setText(\"Box 1\");");
         System.out.println("    Using dot operator we can use the setText from the TextBox Class to set textBox1");
         System.out.println("System.out.println(textBox1.text);");
         System.out.println("    **If we don't initialise the variable, it will return 'null' and crash our program");
         System.out.println("    We can stop this from happening by initialising String text to \"\" so its blank**");
-        System.out.println();
+        blank();
 
         System.out.println("var textBox2 = new TextBox();");
         System.out.println("textBox2.setText(\"Box 2\");");
         System.out.println("System.out.println(textBox2.text);");
         System.out.println("    Using the TextBox class, we can use the methods within it to create a new object called textBox2");
         System.out.println("    with separate data");
-        System.out.println();
+        blank();
 
         //Example code
 //        var textBox1 = new TextBox();
@@ -879,29 +879,29 @@ public class intermediateSections implements sectionInterface{
 
     private static void creatingClasses(){
         System.out.println("Creating Classes");
-        System.out.println();
+        blank();
 
         System.out.println("    Create a new class by opening up the project tab,");
         System.out.println("    Open on src folder, then the package folder, right click on 'Main' and select new Java Class");
         System.out.println("    This will open a new class next to the main class.");
-        System.out.println();
+        blank();
 
         System.out.println("    We select public or private as a access modify,");
         System.out.println("    this will determine if it can be accessed by other classes or not");
-        System.out.println();
+        blank();
 
         System.out.println("    Once we have created a new class, in this example called TextBox, we can write our code:");
         System.out.println("Example TextBox Class");
-        System.out.println();
+        blank();
 
         System.out.println("public class TextBox {");
         System.out.println("    public String text; //Field");
-        System.out.println();
+        blank();
 
         System.out.println("    public void setText(String text){");
         System.out.println("        this.text = text;");
         System.out.println("    }");
-        System.out.println();
+        blank();
 
         System.out.println("    public void clear(){");
         System.out.println("        this.text =\"\";");
@@ -910,44 +910,44 @@ public class intermediateSections implements sectionInterface{
 
         System.out.println("this dot operator is useful when the name of a parameter is the same name as the field");
         System.out.println("'this' dot operator inherits methods from other classes");
-        System.out.println();
+        blank();
     }
 
     private static void understandingClasses() {
         System.out.println("Classes");
         System.out.println("    Classes and Objects");
-        System.out.println();
+        blank();
 
         System.out.println("    Classes: A blueprint for creating objects");
         System.out.println("    Object: An instance of a class");
-        System.out.println();
+        blank();
 
         System.out.println("    For instance, we could have a Class called 'car'");
         System.out.println("    Within this class we will have fields that are made up of states, like currentSpeed, currentGear etc");
         System.out.println("    We can then have methods that change the states. Methods like start(), stop(), changeGear() etc ");
-        System.out.println();
+        blank();
 
         System.out.println("    We can then have objects, that are instances of a class. In this example we would have car1, car2, car3");
         System.out.println("    These car instances will all be made up using the Car class");
         System.out.println("    Each car object will be independent from each other and hold independent data");
         System.out.println("    UML: Unified Modelling Language is a simple visual language used to show classes and their relationships  ");
-        System.out.println();
+        blank();
 
         System.out.println("    Another example:");
         System.out.println("    A class called Lamp");
         System.out.println("    A field with a state called isOn: boolean");
         System.out.println("    It can have two methods turnOn() and turnOff()");
-        System.out.println();
+        blank();
 
         System.out.println("    Class: TV");
         System.out.println("    Field/States: currentVolume, currentChannel, isOn");
         System.out.println("    Methods: turnOn(), turnOff(), increaseVolume(), decreaseVolume() etc");
-        System.out.println();
+        blank();
 
         System.out.println("    Class: TextBox");
         System.out.println("    Field/States: text, limit, length, isFocused etc");
         System.out.println("    Methods: setText(), clear(), enable(), disable() etc");
-        System.out.println();
+        blank();
 
         System.out.println("Creating Objects");
         System.out.println("    We can create new instances of the class and use its methods. The data in each instance");
@@ -956,12 +956,12 @@ public class intermediateSections implements sectionInterface{
 
     private static void introduction() {
         System.out.println("Introduction");
-        System.out.println();
+        blank();
 
         System.out.println("    Programing Paradigms means the style of programming i.e Functional, object-oriented, logic, procedural, event-driven");
         System.out.println("    The best Paradigms is which ever one solves the problem the best");
         System.out.println("    Object programming is based on Data(state) and Methods(Behaviour)");
-        System.out.println();
+        blank();
 
         System.out.println("    Benefits of Object-oriented programming");
         System.out.println("    Objects interact with each other in order to build a larger program");
@@ -970,18 +970,18 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    These smaller objects if done correctly can be reused in other applications");
         System.out.println("    Faster development due to the above points");
         System.out.println("    However it would be beneficial to learn both Object Oriented and Functional programming languages");
-        System.out.println();
+        blank();
     }
 
     private static void tips() {
         System.out.println("Tips");
-        System.out.println();
+        blank();
 
         System.out.println("Introduction");
         System.out.println("    Object programming is based on Data(state) and Methods(Behaviour)");
         System.out.println("    Benefits of OOP is reduced complexity as we can build smaller sections that");
         System.out.println("    are easier to understand and maintain");
-        System.out.println();
+        blank();
 
         System.out.println("Classes and Objects");
         System.out.println("    A Class is a blueprint or template for creating objects.");
@@ -990,18 +990,18 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Class: TV");
         System.out.println("    Field/States: currentVolume, currentChannel, isOn");
         System.out.println("    Methods: turnOn(), turnOff(), increaseVolume(), decreaseVolume() etc");
-        System.out.println();
+        blank();
 
         System.out.println("Creating a Class");
         System.out.println("    Create a new class by opening up the project tab,");
         System.out.println("    Open on src folder, then the package folder, right click on 'Main' and select new Java Class");
         System.out.println("    This will open a new class next to the main class.");
-        System.out.println();
+        blank();
 
         System.out.println("Classes and variables");
         System.out.println("    If we don't initialise the variable, it will return 'null' and crash our program");
         System.out.println("    We can stop this from happening by initialising String text to \"\" so its blank");
-        System.out.println();
+        blank();
 
         System.out.println("Memory Allocation");
         System.out.println("    There is two different areas of memory that data is stored, Heap & Stack");
@@ -1011,66 +1011,66 @@ public class intermediateSections implements sectionInterface{
         System.out.println("    Once finished executing, the variables in the Stack memory are cleared. As the Objects in the Heap");
         System.out.println("    Memory is no longer referenced, these are cleared after a short amount of time. This is called");
         System.out.println("    Garbage Collection");
-        System.out.println();
+        blank();
 
         System.out.println("Encapsulation");
         System.out.println("    Bundle the data and methods that operate on the data in a single unit or separate class");
-        System.out.println();
+        blank();
 
         System.out.println("Getters and Setters:");
         System.out.println("    In java we want to make our fields private and use setters and getters to access them");
         System.out.println("    Select Refactor and then encapsulate fields to automatically use setters and getters");
-        System.out.println();
+        blank();
 
         System.out.println("Throw");
         System.out.println("   Throw means it will end the program with an error. IllegalArgumentException will");
         System.out.println("   pass the error reason to the user");
-        System.out.println();
+        blank();
 
         System.out.println("Abstraction");
         System.out.println("    Abstraction means 'Reduce complexity by hiding unnecessary details'");
-        System.out.println();
+        blank();
 
         System.out.println("Coupling");
         System.out.println("    The level of dependency between classes");
         System.out.println("    Set methods in separate classes to private if not needed in the Main class");
-        System.out.println();
+        blank();
 
         System.out.println("Constructor");
         System.out.println("    We want to to initialise valid values in our new class whilst keeping the Main Class simple");
         System.out.println("    We do this by passing our values to a Constructor method in a separate class");
         System.out.println("    We can use this. dot operator to create a variable imported into the class that has the same name");
         System.out.println("this.text = text;");
-        System.out.println();
+        blank();
 
         System.out.println("Method Overloading");
         System.out.println("    Creating different implementations of a method but with different parameters");
-        System.out.println();
+        blank();
 
         System.out.println("Constructor Overloading");
         System.out.println("    Overloading the constructor method is when we want to pass less parameters so that we can set an inital");
         System.out.println("    value");
-        System.out.println();
+        blank();
 
         System.out.println("View Deceleration");
         System.out.println("    CTL + B");
-        System.out.println();
+        blank();
 
         System.out.println("Extracting Methods into a new class");
         System.out.println("    Place the cursor onto the name of the method and either select Refactor followed by 'Refactor this'");
         System.out.println("    or press 'CTRL + ALT + Shift + T' in this menu select Move Members, when name the new class with the projects package name");
         System.out.println("    and also select the public access modifier. Intellij will adapt all the necessary code.");
         System.out.println("    This is called 'Safe Refactoring'");
-        System.out.println();
+        blank();
 
         System.out.println("Inheritance");
         System.out.println("    Inheritance means that we can set behaviours in the Base/Super/Parent class and these can be passed");
         System.out.println("    onto the Sub/Child Class. The Child class inherits these behaviours");
-        System.out.println();
+        blank();
 
         System.out.println("The Object Class");
         System.out.println("    Java automatically creates object class. If we use the dot operator on our object, we can utilise functions");
         System.out.println("    like hashCode(),equals(),notify etc");
-        System.out.println();
+        blank();
     }
 }

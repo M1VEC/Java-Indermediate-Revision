@@ -5,7 +5,7 @@ import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class fundamentalSection implements sectionInterface {
+public class fundamentalSection extends consoleInteraction implements sectionInterface {
     static Scanner scanner = new Scanner(System.in);
 
     @Override
@@ -23,9 +23,9 @@ public class fundamentalSection implements sectionInterface {
         System.out.println("16- Switch Statements, 17- FizzBuzz Exercise, 18- Loops, 19- Mortgage Calculator 2.0, 20- Creating Methods");
         System.out.println("21- Extracting Methods, 22- Refactoring Repetitive Patterns, 23- Mortgage Calculate 3.0");
         System.out.println("24- Errors, 25- Debugging, 26- Packaging Java Files");
-
-        int value = consoleInteraction.numberPrompt("Which section do you want to run?:");
-        System.out.println();
+        int value = numberPrompt("Which section do you want to run?:");
+        separator();
+        blank();
         return value;
     }
 
