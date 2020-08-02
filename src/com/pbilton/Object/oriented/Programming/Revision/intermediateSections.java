@@ -46,7 +46,7 @@ public class intermediateSections extends consoleInteraction implements sectionI
         else if (selectedSection == 16) access_modifiers();
         else if (selectedSection == 17) overriding_methods();
         else if (selectedSection == 18) upcasting_and_downcasting();
-        else if (selectedSection ==19) comparing_objects();
+        else if (selectedSection == 19) comparing_objects();
         else if (selectedSection == 20) polymorphism();
         else if (selectedSection == 21) abstract_classes_methods();
         else if (selectedSection == 22) final_classes_methods();

@@ -69,7 +69,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    Select the main class, select ok to create the artifact");
         System.out.println("    Go to the build command and select build Artifacts");
         System.out.println("    This creates a jar file in the projects 'out' folder");
-        System.out.println();
+        blank();
         System.out.println("How to run jar files");
         System.out.println("    To run jar files we need to make sure we have the latest JDK installed, and ");
         System.out.println("    the correct paths set");
@@ -94,12 +94,12 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    These prevent us from compiling our program. Often from not following Java syntax");
         System.out.println("    They are easy to find and fix as the ide will highlight the errors");
         System.out.println("    Use google or stackoverflow.com to help find solutions");
-        System.out.println();
+        blank();
 
         System.out.println("Run time errors");
         System.out.println("    To find these errors we have to use a tool called 'Debugger'");
         System.out.println("    The debugger will go through the program line by line");
-        System.out.println();
+        blank();
 
         System.out.println("Common Syntax errors:");
         System.out.println("    Specifying variable types and ; at the end of the line");
@@ -107,17 +107,17 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    Forget to add \"\" when printing a string");
         System.out.println("    Misspell a variable or use incorrect case");
         System.out.println("    Using a single = when comparing variables instead of ==");
-        System.out.println();
+        blank();
     }
 
     private static void Mortgage_Calculate_3() {
         System.out.println("Mortgage Calculate 3.0");
-        System.out.println();
+        blank();
         System.out.println("    Finally the mortgage calculator is completed after the final code revision in which");
         System.out.println("    The code has been Refactored. This has been done by grouping sections of code that relate to");
         System.out.println("    to each into separate methods which cuts down our main method to a couple of lines.");
         System.out.println("    This is done by highlighting the code and pressing ctrl + alt + m");
-        System.out.println();
+        blank();
 
         System.out.println("  public class Main {");
         System.out.println("    final static short MONTHS_IN_YEAR = 12;");
@@ -129,14 +129,14 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    short numberOfPayments = payments(years);");
         System.out.println("    float monthlyInterest = interest(annualInterest);");
         System.out.println("    System.out.println();");
-        System.out.println();
+        blank();
 
         System.out.println("  printMortgage(principle, numberOfPayments, monthlyInterest);");
-        System.out.println();
+        blank();
 
         System.out.println("  printPaymentSchedule(principle, numberOfPayments, monthlyInterest);");
         System.out.println("  }");
-        System.out.println();
+        blank();
 
         System.out.println("  private static void printMortgage(int principle, short numberOfPayments, float monthlyInterest) {");
         System.out.println("  double mortgage = calculateMortgage(principle, monthlyInterest, numberOfPayments);");
@@ -146,7 +146,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    System.out.println(\"Monthly Payments: \" + mortgageFormatted);");
         System.out.println("    System.out.println();");
         System.out.println("  }");
-        System.out.println();
+        blank();
 
         System.out.println("  private static void printPaymentSchedule(int principle, short numberOfPayments, float monthlyInterest) {");
         System.out.println("    System.out.println(\"Payment Schedule\");");
@@ -154,7 +154,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    System.out.println(\"Month | Payment\");");
         System.out.println("  paymentSchedule(numberOfPayments,monthlyInterest,principle);");
         System.out.println("  }");
-        System.out.println();
+        blank();
 
         System.out.println("  public static void paymentSchedule (short numberOfPayments, float monthlyInterest, int principle){");
         System.out.println("    for (int paymentsMade = 1; paymentsMade <= numberOfPayments; paymentsMade++){");
@@ -164,17 +164,17 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("        System.out.println(paymentsMade + \")     \" + paymentsFormatted);");
         System.out.println("    }");
         System.out.println("  }");
-        System.out.println();
+        blank();
 
         System.out.println("  public static short payments(short years){");
         System.out.println("    return (short)(years * MONTHS_IN_YEAR);");
         System.out.println("  }");
-        System.out.println();
+        blank();
 
         System.out.println("  public static float interest(float annualInterest){");
         System.out.println("    return ((annualInterest / PERCENT) / MONTHS_IN_YEAR);");
         System.out.println("  }");
-        System.out.println();
+        blank();
 
         System.out.println("  public static double readNumber(String prompt, double min, double max){");
         System.out.println("    Scanner scanner = new Scanner(System.in);");
@@ -188,12 +188,12 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    }");
         System.out.println("    return value;");
         System.out.println("  }");
-        System.out.println();
+        blank();
 
         System.out.println("  public static double calculateMortgage(int principle,");
         System.out.println("    float monthlyInterest,");
         System.out.println("    short numberOfPayments){");
-        System.out.println();
+        blank();
 
         System.out.println("    return principle * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))");
         System.out.println("        / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);");
@@ -203,21 +203,21 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
 
     private static void Refactoring_Repetitive_Patterns() {
         System.out.println("Refactoring Repetitive Patterns");
-        System.out.println();
+        blank();
         System.out.println("    If we have repetitive code, we can place that in a single method that can then be called multiple");
         System.out.println("    times");
         System.out.println("    In the example below, we call readNumber method and pass three variables");
         System.out.println("    In return the variable on the left gets initialised");
-        System.out.println();
+        blank();
 
         System.out.println("int principle = (int) readNumber(\"Principle: \",1000,1_000_000);");
         System.out.println("float annualInterest = (float) readNumber(\"Annual Interest Rate: \", 1, 30);");
         System.out.println("byte years = (byte) readNumber(\"Period: \", 1, 30);");
-        System.out.println();
+        blank();
 
         System.out.println("    The following is the method readNumber that gets called, when we call the method we");
         System.out.println("    pass variables that populate prompt, min and max");
-        System.out.println();
+        blank();
 
         System.out.println("public static double readNumber(String prompt, double min, double max){");
         System.out.println("   Scanner scanner = new Scanner(System.in);");
@@ -235,29 +235,29 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
 
     private static void Extracting_methods() {
         System.out.println("Extracting Methods");
-        System.out.println();
+        blank();
 
         System.out.println("    To clean up code, we put sections into methods. When creating a method,");
         System.out.println("    we need to pass any variables that are needed, along with thier type");
         System.out.println("    When we call the method, we need to include the variables we are sending");
         System.out.println("    Whatever we work out in the method, we can return it using the return statement");
-        System.out.println();
+        blank();
 
         System.out.println("double mortgage = calculateMortgage(principle, annualInterest, years);");
         System.out.println("    This statement calls the method calculateMortgage, in brackets is the variables that we are sending");
-        System.out.println();
+        blank();
 
         System.out.println("public static double calculateMortgage(int principle, float annualInterest, byte years){");
         System.out.println(" final byte MONTHS_IN_YEAR = 12;");
         System.out.println(" final byte PERCENT = 100;");
-        System.out.println();
+        blank();
 
         System.out.println(" float monthlyInterest = ((annualInterest / 100) / 12);");
         System.out.println(" short numberOfPayments = (short)(years * MONTHS_IN_YEAR);");
-        System.out.println();
+        blank();
         System.out.println(" double mortgage = principle * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))");
         System.out.println("/(Math.pow(1 + monthlyInterest, numberOfPayments) - 1);");
-        System.out.println();
+        blank();
 
         System.out.println(" return mortgage;");
         System.out.println("}");
@@ -265,7 +265,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
 
     private static void Creating_Methods() {
         System.out.println("Creating Methods");
-        System.out.println();
+        blank();
         System.out.println("    A Class is a container for related functions");
         System.out.println("    Method is a function that is a part of a Class");
         System.out.println("    In Java each Class should have an access modifier");
@@ -274,13 +274,13 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("   String message = greetUser(\" phil\", \"Bilton\");");
         System.out.println("   System.out.println(message);");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("Following is a method:");
         System.out.println("public static void greetUser(String firstName, String lastName){");
         System.out.println("  System.out.println(\"Hello\" + firstName + \" \" + lastName);");
         System.out.println("}");
-        System.out.println();
+        blank();
         System.out.println("    public:     access modifier, the method can be called from outside the class");
         System.out.println("    static:     belongs to a class as opposed to an object");
         System.out.println("    void:       if the method returns a value then we can write int etc instead of void");
@@ -293,7 +293,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("public static String greetUser(String firstName, String lastName) {");
         System.out.println("  return  \"Hello \" + firstName + \" \" + lastName;");
         System.out.println("}");
-        System.out.println();
+        blank();
         System.out.println("    void is changed to String and the print command is changed to return");
         System.out.println("    From the main method, greetUser is called and firstName and lastName is sent");
         System.out.println("    Within greetUser, firstName and lastName is used as local variables and returns a message");
@@ -400,7 +400,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
                 "the code block ");
         System.out.println("    3) i++) This is what happens once the code block is executed, in this case it will add 1 to i");
         System.out.println("    We have to use {} with for loops if we are carrying out more than one statement");
-        System.out.println();
+        blank();
 
         System.out.println("    While Loops");
         System.out.println("int i = 10;");
@@ -408,7 +408,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
 
         System.out.println("System.out.println(\"Hello world \" + i);");
         System.out.println("i--;");
-        System.out.println();
+        blank();
 
         System.out.println("    while loops are better to use in situations where we don't know how many\n" +
                 "times we want to run the loop");
@@ -420,14 +420,14 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println(" System.out.println(input);");
         System.out.println("}");
         System.out.println("    This loop will continue whilst input does not equal quit");
-        System.out.println();
+        blank();
 
         System.out.println("Break and Continue Statement");
         System.out.println("    Break statements can be used to finish the loop without finishing the rest of the code block");
         System.out.println("    Continue Statement can be used to return the loop back to the top");
         System.out.println("    while (true) {");
         System.out.println("    If you use while(true) you NEED a break statement otherwise the loop will never finish");
-        System.out.println();
+        blank();
         System.out.println("String input = \"\";");
         System.out.println("while (true){");
         System.out.println("  System.out.println(\"Input\");");
@@ -438,7 +438,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    break;");
         System.out.println("  System.out.println(input);");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("Do While Loops");
         System.out.println("    Will execute at least once because the condition is at the end of the loop");
@@ -448,13 +448,13 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("  input = scanner.next().toLowerCase();");
         System.out.println("  System.out.println(input);");
         System.out.println("}  while (!input.equals(\"quit\"));");
-        System.out.println();
+        blank();
 
         System.out.println("For Each Loops");
         System.out.println("    Can simplify For loops, but with restrictions:");
         System.out.println("    For Each Loops is always forward only, they can't go in reverse");
         System.out.println("    You don't have access to the index of each item");
-        System.out.println();
+        blank();
 
         String[] fruits = {"apples","mango","orange"};
         System.out.println("For Loop");
@@ -467,7 +467,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println();
         System.out.println("    In a For Each Loop, there is no index and no condition. The");
         System.out.println("    String fruit on each iteration will become the indexed fruits");
-        System.out.println();
+        blank();
     }
 
     private static void FizzBuzz_Exercise() {
@@ -475,12 +475,12 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    int fizz = 5;");
         System.out.println("    int Buzz = 3;");
         System.out.println("    String play = \"\";");
-        System.out.println();
+        blank();
         System.out.println("    Scanner scanner = new Scanner(System.in);");
         System.out.println("    while (!play.equals(\"n\")) {");
         System.out.println("    System.out.print(\"Please enter a number: \");");
         System.out.println("    int numberEntered = scanner.nextInt();");
-        System.out.println();
+        blank();
         System.out.println("    if ((numberEntered % fizz == 0) && (numberEntered % buzz == 0))");
         System.out.println("        System.out.println(\"    fizzbuzz\");");
         System.out.println("    else if (numberEntered % fizz == 0)");
@@ -489,12 +489,12 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("        System.out.println(\"    buzz\");");
         System.out.println("    else");
         System.out.println("        System.out.println(\"    \" + numberEntered);");
-        System.out.println();
+        blank();
         System.out.println("    System.out.println(\"Would you like to play again?\");");
         System.out.println("    System.out.println(\"Y or N\");");
         System.out.println("    play = scanner.next().toLowerCase();");
         System.out.println("    }");
-        System.out.println();
+        blank();
 
         int fizz = 5;
         int buzz = 3;
@@ -520,21 +520,21 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("Switch Statements");
         System.out.println("    Switch statements executes different parts of code depending");
         System.out.println("    on a value of an expression");
-        System.out.println();
+        blank();
 
         System.out.println("String role = \"admin\";");
         System.out.println(" switch (role) {");
         System.out.println("  case \"admin\":");
         System.out.println("    System.out.println(\"You're an admin\");");
         System.out.println("  break;");
-        System.out.println();
+        blank();
         System.out.println("  case \"moderator\":");
         System.out.println("    System.out.println(\"You're a moderator\");");
         System.out.println("  break;");
-        System.out.println();
+        blank();
         System.out.println(" default:");
         System.out.println("    System.out.println(\"You're a guest\");");
-        System.out.println();
+        blank();
 
         String role = "admin";
         switch (role) {
@@ -549,7 +549,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
             default:
                 System.out.println("You're a guest");
         }
-        System.out.println();
+        blank();
         System.out.println("Start with switch followed by the variable name in () and then {");
         System.out.println("Case acts like an 'if' ");
         System.out.println("Each case needs a break statement otherwise Java will continue with");
@@ -577,7 +577,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    If statements are important to build programs that makes decisions based " +
                 "on certain conditions");
         System.out.println("The following is a basic If statement");
-        System.out.println();
+        blank();
 
         System.out.println("int temperature = 32;");
         System.out.println("if(temperature > 30) {");
@@ -589,11 +589,11 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("else");
         System.out.println("  System.out.println(\"It's a cold day\");");
 
-        System.out.println();
+        blank();
         System.out.println("    The curly braces after an if statement allows for a block of code to " +
                 "run if that condition is met");
         System.out.println("    {} Braces only required if we have multiple statements within that IF condition");
-        System.out.println();
+        blank();
 
         // Simplifying If Statements
         System.out.println("Simplifying If Statements");
@@ -601,7 +601,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    Any variables initialised inside an if statement cant be accessed outside that code block");
         System.out.println("    Instead we initialise it before the if statement");
         System.out.println("Original IF Statement:");
-        System.out.println();
+        blank();
 
         System.out.println("int income = 120_000;");
         System.out.println("boolean hasHighIncome = false;");
@@ -609,10 +609,10 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("  hasHighIncome = true;");
         System.out.println("else");
         System.out.println("  hasHighIncome = false;");
-        System.out.println();
+        blank();
 
         System.out.println("    The above if statement could be simplified by using the boolean as the IF");
-        System.out.println();
+        blank();
 
         System.out.println("int income = 120_000;");
         System.out.println("boolean hasHighIncome = (income > 100_000);");
@@ -628,7 +628,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    && is the AND operator. It checks if 1st value is true and the following value is also true");
         System.out.println("    || is the OR operator. It checks if the 1st value is true OR the following value is true ");
         System.out.println("    ! When using logical operators you can use a ! before the variable to reverse it, i.e value is not true");
-        System.out.println();
+        blank();
 
         System.out.println("int temperature = 23;");
         System.out.println("boolean isWarm = temperature > 20 && temperature < 30;");
@@ -636,7 +636,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         boolean isWarm = temperature > 20 && temperature < 30;
         System.out.println("    " + isWarm);
         System.out.println("    This checks the temperature is above 20 AND below 30 ");
-        System.out.println();
+        blank();
 
         System.out.println("boolean hasHighIncome =true;");
         System.out.println("boolean hasGoodCredit = true;");
@@ -653,7 +653,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
 
     private static void Comparision_Operators() {
         System.out.println("Comparision Operators");
-        System.out.println();
+        blank();
 
         System.out.println("    The following operators are used to compare two primitive values against each other");
         System.out.println("    ==     values match");
@@ -662,7 +662,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    >=     Greater than or equals to");
         System.out.println("    <      Less than");
         System.out.println("    <=     Less than or equals to");
-        System.out.println();
+        blank();
         int x = 1;
         int y = 3;
         System.out.println("int x = 1;");
@@ -670,17 +670,17 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("System.out.println(x == y);");
         System.out.println(     x == y);
         System.out.println("Checks if x and y values match");
-        System.out.println();
+        blank();
 
         System.out.println("System.out.println(x != y);");
         System.out.println(     x != y);
         System.out.println("Checks if x and y are different");
-        System.out.println();
+        blank();
 
         System.out.println("System.out.println(x > y);");
         System.out.println(x > y);
         System.out.println("Checks if x is greater than y");
-        System.out.println();
+        blank();
 
         System.out.println("System.out.println(x <= y);");
         System.out.println(x <= y);
@@ -708,30 +708,30 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("Mortgage: " + mortgageFormatted);
 
         //----Mortgage example printed out-----
-        System.out.println();
+        blank();
         System.out.println("    System.out.print(\"Principle:\");");
         System.out.println("    int principle = scanner.nextInt();");
         System.out.println("Gets the total needed to borrow");
-        System.out.println();
+        blank();
 
         System.out.println("    System.out.print(\"Annual Interest Rate:\");");
         System.out.println("    double annual = scanner.nextDouble();");
         System.out.println("    double monthly = (annual / 100) / 12;");
         System.out.println("Gets the yearly interest rate, divides by 100 and " +
                 "then divided by 12 months to get per month");
-        System.out.println();
+        blank();
 
         System.out.println("    System.out.print(\"Period:\");");
         System.out.println("    int years = scanner.nextInt();");
         System.out.println("    int months = years * 12;");
         System.out.println("Gets the amount of years to pay back the loan");
-        System.out.println();
+        blank();
 
         System.out.println("    double mortgage = principle * (monthly * Math.pow(1 + monthly, months))");
         System.out.println("    / (Math.pow(1 + monthly, months) - 1);");
         System.out.println("Uses the standard mortgage formula that works out how much " +
                 "to repay each month");
-        System.out.println();
+        blank();
 
         System.out.println("    String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);");
         System.out.println("    System.out.println(\"Mortgage: \" + mortgageFormatted);");
@@ -746,11 +746,11 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("System.out.print(\"How old are you?:\");");
         System.out.println("byte age = name.nextByte();");
         System.out.println("System.out.println(\"You are \" + age);");
-        System.out.println();
+        blank();
 
         System.out.println("    Scanner used for user input. New scanner only is needed once, after use the following:");
         System.out.println("int age = scanner.nextByte();");
-        System.out.println();
+        blank();
 
         System.out.println("Scanner scanner = new Scanner(System.in);");
         System.out.println("System.out.print(\"Please tell me your name:\");");
@@ -759,7 +759,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("System.out.print(\"How old are you \" + name + \"?:\");");
         System.out.println("Byte age = scanner.nextByte();");
         System.out.println("System.out.println(name + \" you are \" + age + \" years old?\");");
-        System.out.println();
+        blank();
 
         System.out.println("String name = scanner.nextLine().trim();");
         System.out.println("    trim dot operator will trim blank spaces");
@@ -774,7 +774,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("String cashTotal = cash.format(2341324);");
         System.out.println("System.out.println(cashTotal);");
         System.out.println("    Above turns cash var into a currency format: £2,341,324");
-        System.out.println();
+        blank();
 
         NumberFormat perc = NumberFormat.getPercentInstance();
         String howMuch = perc.format(0.45);
@@ -782,17 +782,17 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("String howMuch = perc.format(0.45);");
         System.out.println("System.out.println(howMuch);");
         System.out.println("    Above turns perc into a percentage format: 45%");
-        System.out.println();
+        blank();
 
         String result = NumberFormat.getPercentInstance().format(0.1);
         System.out.println("String result = NumberFormat.getPercentInstance().format(0.1);");
         System.out.println("System.out.println(result);");
         System.out.println("    Above is the same as above example, but is called chain formatting");
-        System.out.println();
+        blank();
 
         System.out.println("    Use NumberFormat with the dot operator to access " +
                 "different formatting methods");
-        System.out.println();
+        blank();
 
 
         System.out.println("***Tip***");
@@ -809,22 +809,22 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("int result = (int)Math.ceil(1.1F);");
         System.out.println("    Above example returns the ceiling of 1.1, which is 2. But it tries to return a double.");
         System.out.println("    It needs to be explicitly casted as int.");
-        System.out.println();
+        blank();
 
         int resultFloor = (int)Math.floor(1.1F);
         System.out.println("int result = (int)Math.floor(1.1F);");
         System.out.println("    Above returns the whole number below 1.1 becomes 1");
-        System.out.println();
+        blank();
 
         int resultMax = Math.max(3, 10);
         System.out.println("int result = Math.max(3, 10);");
         System.out.println("    Returns the largest number");
-        System.out.println();
+        blank();
 
         double resultRandom = Math.random();
         System.out.println("double result = Math.random();");
         System.out.println("    Returns a number between 0 and 1");
-        System.out.println();
+        blank();
 
         System.out.println("int result = (int) (Math.random()*100);");
         System.out.println("    Cast as int and wrap Math.random()*100 with ()");
@@ -844,18 +844,18 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("int y = x + 2;");
         System.out.println("    In the background java will copy short x to a unknown int then add 2 this is Implicit casting");
         System.out.println("    Implicit casting is Java casting in the background automatically");
-        System.out.println();
+        blank();
 
         System.out.println("double x = 1.1;");
         System.out.println("double y = x + 2;");
         System.out.println("    The value of 2 will be casted to a double, then added to x");
         System.out.println("    byte > short > int > long > float > double");
-        System.out.println();
+        blank();
 
         System.out.println("double x = 1.1;");
         System.out.println("int y = (int)x + 2;");
         System.out.println("    Explicit Casting. Forces the double to a int. Only works when compatible");
-        System.out.println();
+        blank();
 
         System.out.println("String x = \"4\";");
         System.out.println("int y = Integer.parseInt(x) + 2;");
@@ -869,25 +869,25 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("double result = (double)10 / (double)3;");
         System.out.println("System.out.println(result);");
         System.out.println("    Use the double expression when dividing to get the remainder");
-        System.out.println();
+        blank();
 
         System.out.println("int x = 1;");
         System.out.println("x++;");
         System.out.println("System.out.println(x);");
         System.out.println("    Use ++ or -- expressions to add or subtract a variable by 1");
-        System.out.println();
+        blank();
 
         System.out.println("int x = 1;");
         System.out.println("int y = x++;");
         System.out.println("    This will cause y to become 1 and x to become 2 since ++ was added after x");
-        System.out.println();
+        blank();
 
         System.out.println("int x = 1;");
         System.out.println("int y = ++x;");
         System.out.println("    This will cause y to become 2 and x to become 2 since ++ was added before x");
         System.out.println("    To increment by more than 1");
         System.out.println("x += 2");
-        System.out.println();
+        blank();
 
         System.out.println("    Order of operations is () then */ then +-");
     }
@@ -914,7 +914,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("System.out.println(number.length);");
         System.out.println("    number.length operator will print the length of the array");
 
-        System.out.println();
+        blank();
         System.out.println("Multi-dimensional arrays");
         System.out.println("int [] [] numbers = new int [2] [3];");
         System.out.println("numbers[0][0] = 4;");
@@ -927,7 +927,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("System.out.println(Arrays.deepToString(numbers));");
         System.out.println("    Use the above Arrays.deepToString command to print the array");
 
-        System.out.println();
+        blank();
         System.out.println("    If the contents of the array is already known you can use:");
         System.out.println("int [][] numbers = { {1,2,3} , {4,5,6}};");
     }
@@ -949,47 +949,47 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         byte herAge = 31;
         System.out.println("byte herAge = 31;");
         System.out.println("    Byte can store -128 to 127 bytes");
-        System.out.println();
+        blank();
 
         short little = 123;
         System.out.println("short little = 123;");
         System.out.println("    Short can store -32k to 32k");
-        System.out.println();
+        blank();
 
         int viewCounts = 123_456_789;
         System.out.println("int viewCounts = 123_456_789;");
         System.out.println("    Int can store -2b to 2b. Use Underscore after every 3 numbers");
-        System.out.println();
+        blank();
 
         long viewLarge = 3_123_456_789L;
         System.out.println("long viewLarge = 3_123_456_789L;");
         System.out.println("    Long can store large numbers but use L at the end");
-        System.out.println();
+        blank();
 
         float price = 10.99F;
         System.out.println("float price = 10.99F;");
         System.out.println("    Float can store decimal but use F at the end");
-        System.out.println();
+        blank();
 
         double cost = 15_876.99;
         System.out.println("double cost = 15_876.99;");
         System.out.println("    Double same as float but for larger numbers");
-        System.out.println();
+        blank();
 
         char letter = 'A';
         System.out.println("char letter = 'A';");
         System.out.println("    Char store only one character. use ' ' around single characters and \" \" around strings");
-        System.out.println();
+        blank();
 
         String message = "Hello, welcome to java";
         System.out.println("String message = \"Hello\";");
         System.out.println("    String can store unlimited characters. Wrap \" \" around strings");
-        System.out.println();
+        blank();
 
         boolean isEligable = true;
         System.out.println("boolean isEligable = true;");
         System.out.println("    Boolean is like yes or no and prints either 'true' or 'false' ");
-        System.out.println();
+        blank();
 
         System.out.println("    Type sout for print shortcut");
         System.out.println("    If you want user input on the same line as a question for example, " +
@@ -997,7 +997,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    If you want to use special characters in your message, " +
                 "you have to prefix each character with \\ ");
 
-        System.out.println();
+        blank();
         System.out.println("Reference variables revision");
         System.out.println("    Use Reference variables to store date, mail messages etc");
 
@@ -1006,7 +1006,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    When creating Reference vars, you need to create 'new' memory space like above^");
         System.out.println("    Use the dot operator to get access to more data within the Date operator");
 
-        System.out.println();
+        blank();
         System.out.println("Difference between primitive and reference");
         byte x = 1;
         System.out.println("byte x = 1;");
@@ -1029,21 +1029,21 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    JDK stands for Java Development Kit");
         System.out.println("    Use a code editor like Intellij to write code");
         System.out.println("    Java is still being used on billions of devices around the world");
-        System.out.println();
+        blank();
         System.out.println("    Java programs are made up of Classes, Methods and Functions");
-        System.out.println();
+        blank();
 
         System.out.println("Classes, Methods and Functions");
         System.out.println("    Function: Is a block of code that performs a task");
         System.out.println("    The actual code we write for the function is written between the {}");
-        System.out.println();
+        blank();
 
         System.out.println("    Every Java program should have at least one function");
         System.out.println("    The first function should always be main e.g");
         System.out.println("void main() { ");
         System.out.println("    Body of code");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("    A Class is a container for related functions");
         System.out.println("    We use classes to organise our code in various sections eg");
@@ -1052,16 +1052,16 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    body of code for the function");
         System.out.println("  }");
         System.out.println("}");
-        System.out.println();
+        blank();
 
         System.out.println("    Method is a function that is a part of a Class");
         System.out.println("    If a function is outside of a class then it is referred to as a Function");
-        System.out.println();
+        blank();
 
         System.out.println("    In Java each Class should have an access modifier. An access modifier");
         System.out.println("    is a keyword that determines if other classes and methods can access it.");
         System.out.println("    They are usually named public or private e.g ");
-        System.out.println();
+        blank();
 
         System.out.println("public class Main {");
         System.out.println("  public void main() {");
@@ -1082,7 +1082,7 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    If you want to use special characters in your message, " +
                 "you have to prefix each character with \\ ");
         System.out.println("    Use dot operator to check or manipulate the string before print. Does not change original string");
-        System.out.println();
+        blank();
 
         System.out.println("Variables");
         System.out.println("    When declaring variables, they need to initialised outside of code blocks,");
@@ -1091,11 +1091,11 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("Arrays");
         System.out.println("    New way of initializing an array if contents already known using curly brackets");
         System.out.println("    int[] number = {1,2,3,4,5};");
-        System.out.println();
+        blank();
 
         System.out.println("Constants");
         System.out.println("    Use the word final to lock the variable. Where possible use CAPITALS for the variable name");
-        System.out.println();
+        blank();
 
         System.out.println("Maths");
         System.out.println("    Order of operations is () then */ then +-");
@@ -1105,19 +1105,19 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("int result = (int) (Math.random()*100);");
         System.out.println("if(number % 5 == 0)");
         System.out.println("     % Modulus operator returns the remainder of a division");
-        System.out.println();
+        blank();
 
         System.out.println("Casting");
         System.out.println("    Implicit casting is Java casting in the background automatically");
         System.out.println("    Explicit Casting is you forcing a type of variable to become another as long as its compatible");
-        System.out.println();
+        blank();
 
         System.out.println("Number Formatting");
         System.out.println("    Use NumberFormat with the dot operator to access " +
                 "different formatting methods");
         System.out.println("    To change all instances of a variable name, highlight word and right click.");
         System.out.println("    Select Refactor and then Rename. Shortcut is Shift+F6");
-        System.out.println();
+        blank();
 
         System.out.println("User input");
         System.out.println("Scanner scanner = new Scanner(System.in);");
@@ -1125,13 +1125,13 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("int age = scanner.nextByte();");
         System.out.println("String name = scanner.nextLine().trim();");
         System.out.println("    trim dot operator will trim blank spaces");
-        System.out.println();
+        blank();
 
         System.out.println("Logical Operators");
         System.out.println("    && AND is used to check two values are true");
         System.out.println("    || OR is used to check if either value is true");
         System.out.println("    ! isNot is used at the start of the variable name to reverse the condition i.e is not true");
-        System.out.println();
+        blank();
 
         System.out.println("If Statements");
         System.out.println("    Any variables initialised inside an if statement cant be accessed outside that code block");
@@ -1139,17 +1139,17 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    The curly braces after an if statement allows for a block of code to " +
                 "run if that condition is met");
         System.out.println("    {} Braces only required if we have multiple statements within that IF condition");
-        System.out.println();
+        blank();
 
         System.out.println("Ternary Operator");
         System.out.println("    It is made up of three parts, the condition (?) and two values separated by (:)");
         System.out.println("condition ? value1 : value2");
-        System.out.println();
+        blank();
 
         System.out.println("Switch Statements");
         System.out.println("    Switch statements executes different parts of code depending");
         System.out.println("    depending on a value of an expression");
-        System.out.println();
+        blank();
 
         System.out.println("Loops");
         System.out.println("For Loops:          for (int i = 1; i <= 5; i++);");
@@ -1158,12 +1158,12 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    Continue Statement can be used to return the loop back to the top");
         System.out.println("    Do while loops will execute at least once because the condition is at the end of the loop");
         System.out.println("    For Each Loop:      for (String fruit : fruits)");
-        System.out.println();
+        blank();
 
         System.out.println("Refactoring");
         System.out.println("    Refactoring is a means to change the structure of the code without");
         System.out.println("    changing its behaviour");
-        System.out.println();
+        blank();
 
         System.out.println("Classes");
         System.out.println("    A Class is a container for related functions");
@@ -1177,12 +1177,12 @@ public class fundamentalSection extends consoleInteraction implements sectionInt
         System.out.println("    Keep your methods short");
         System.out.println("    Extract repetitive patterns");
         System.out.println("    Extract highly related statements");
-        System.out.println();
+        blank();
 
         System.out.println("Packaging Java files");
         System.out.println("    We need to create jar files in order to run the programs in CMD Prompt");
         System.out.println("    When trying to open jar files we need to navigate to the correct dir");
-        System.out.println();
+        blank();
     }
 }
 
